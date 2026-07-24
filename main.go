@@ -15,8 +15,10 @@ import (
 	"os"
 
 	"github.com/modelcontextprotocol/go-sdk/mcp"
+	bpmnmcp "github.com/xdung24/bpmn-mcp/pkg/mcpserver"
 	"github.com/xdung24/diagram-mcp/internal/installer"
-	"github.com/xdung24/diagram-mcp/internal/mcpserver"
+	drawiomcp "github.com/xdung24/drawio-mcp/pkg/mcpserver"
+	mermaidmcp "github.com/xdung24/mermaid-mcp/pkg/mcpserver"
 )
 
 var version = "dev"
@@ -51,7 +53,20 @@ func main() {
 
 	flag.Parse()
 
-	server := mcpserver.NewServer(version)
+	// Read the mcp type argument from the command line, if provided.
+	// This allows the user to specify which MCP server to run (bpmn, mermaid, or drawio).
+	mcpType := flag.Arg(0)
+	var server *mcp.Server
+	switch mcpType {
+	case "bpmn":
+		server = bpmnmcp.NewServer(version)
+	case "mermaid":
+		server = mermaidmcp.NewServer(version)
+	case "drawio":
+		server = drawiomcp.NewServer(version)
+	default:
+		server = mermaidmcp.NewServer(version)
+	}
 
 	if httpAddr != "" {
 		// JSONResponse avoids the text/event-stream (SSE) response mode: some

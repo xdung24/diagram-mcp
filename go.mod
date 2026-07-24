@@ -1,21 +1,27 @@
 module github.com/xdung24/diagram-mcp
 
-go 1.26.5
+go 1.26
 
 replace github.com/xdung24/bpmn-mcp => ../bpmn-mcp
+
 replace github.com/xdung24/mermaid-mcp => ../mermaid-mcp
+
 replace github.com/xdung24/drawio-mcp => ../drawio-mcp
 
 require (
 	github.com/modelcontextprotocol/go-sdk v1.6.1
 	github.com/shirou/gopsutil/v4 v4.26.6
-	github.com/xdung24/mermaid-mcp v0.4.8
+	github.com/xdung24/bpmn-mcp v0.2.16
+	github.com/xdung24/drawio-mcp v0.2.6
+	github.com/xdung24/mermaid-mcp v0.4.9
 	golang.org/x/sys v0.47.0
 )
 
 require (
 	github.com/ebitengine/purego v0.10.2 // indirect
+	github.com/fogleman/gg v1.3.0 // indirect
 	github.com/go-ole/go-ole v1.3.0 // indirect
+	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
 	github.com/google/jsonschema-go v0.4.3 // indirect
 	github.com/lufia/plan9stats v0.0.0-20260627054121-477a66015f15 // indirect
 	github.com/power-devops/perfstat v0.0.0-20240221224432-82ca36839d55 // indirect
