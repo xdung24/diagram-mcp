@@ -1,0 +1,27 @@
+---
+config:
+    theme: default
+    maxTextSize: 50000
+    maxEdges: 500
+    fontSize: 16
+---
+architecture-beta
+    group web_tier(cloud)[Web Tier]
+    group aws_services(cloud)[AWS Cloud]
+    group compute_tier(server)[External Compute]
+    group database_tier(database)[Data Storage]
+    service web_app(internet)[Web Application] in web_tier
+    service s3(database)[S3 Bucket] in aws_services
+    service sqs(internet)[SQS Queue] in aws_services
+    service worker_pool(server)["Worker Pool (Python)"] in compute_tier
+    service ai_model(server)["AI Model Service (ANN)"] in compute_tier
+    service postgres(database)[PostgreSQL] in database_tier
+    service websocket(internet)[WebSocket Notifier] in compute_tier
+    web_app:B --> T:s3
+    s3:B --> T:sqs
+    sqs:R --> L:worker_pool
+    s3:R --> L:worker_pool
+    worker_pool:R --> L:ai_model
+    ai_model:L --> R:worker_pool
+    worker_pool:B --> T:postgres
+    websocket:L --> R:web_app

@@ -1,0 +1,4 @@
+We're planning our next product sprint and need to prioritize the features our users have been requesting, can you visualize this as a quadrant chart?
+Plot them on reach (low to high) versus effort (low to high). Label the four quadrants: top-left as 'Quick Wins', top-right as 'Major Projects', bottom-left as 'Fill Ins', and bottom-right as 'Thankless Tasks'.
+Here's what we're considering: Dark Mode has high reach and low effort, Advanced Search has high reach and high effort, Custom Themes has low reach and low effort, Multi-Factor Auth has high reach and high effort, Keyboard Shortcuts has low reach and low effort, and Offline Mode has high reach and high effort.
+Title it 'Feature Prioritization - Reach vs Effort'.

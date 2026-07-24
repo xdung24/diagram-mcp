@@ -1,0 +1,9 @@
+Create an org chart (a tree of plain rectangle nodes connected by edges, no
+containers needed).
+
+"CEO" is the root. The CEO has three direct reports: "VP Engineering", "VP
+Sales", and "VP Marketing".
+
+VP Engineering has two direct reports: "Engineering Manager" and "QA
+Manager". VP Sales has one direct report: "Sales Manager". VP Marketing has
+one direct report: "Marketing Manager".

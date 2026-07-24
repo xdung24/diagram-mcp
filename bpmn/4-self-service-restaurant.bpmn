@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_680f6d20" name="" targetNamespace="http://bpmn-mcp.local/schema/bpmn">
+  <bpmn:process id="Process_7db274d4" name="Guest" isExecutable="false">
+    <bpmn:startEvent id="StartEvent_48990d74" name="">
+      <bpmn:outgoing>SequenceFlow_c6f1db76</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="EndEvent_2ebafbac" name="">
+      <bpmn:incoming>SequenceFlow_6d7a7e6a</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="Task_c90a9556" name="Enter restaurant">
+      <bpmn:incoming>SequenceFlow_c6f1db76</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_15f2a704</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_4af00fa4" name="Choose dish">
+      <bpmn:incoming>SequenceFlow_15f2a704</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_56580ca6</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_d8d05023" name="Wait for turn">
+      <bpmn:incoming>SequenceFlow_56580ca6</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_f38e9362</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_639fde87" name="Place order">
+      <bpmn:incoming>SequenceFlow_f38e9362</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_e998c827</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_0bfb0a73" name="Buzzer rings">
+      <bpmn:incoming>SequenceFlow_e998c827</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_44541c5d</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_2f735515" name="Pick up meal">
+      <bpmn:incoming>SequenceFlow_44541c5d</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_ef66721e</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_963eb6e1" name="Eat meal">
+      <bpmn:incoming>SequenceFlow_ef66721e</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_6d7a7e6a</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="SequenceFlow_c6f1db76" name="" sourceRef="StartEvent_48990d74" targetRef="Task_c90a9556"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_15f2a704" name="" sourceRef="Task_c90a9556" targetRef="Task_4af00fa4"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_56580ca6" name="" sourceRef="Task_4af00fa4" targetRef="Task_d8d05023"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_f38e9362" name="" sourceRef="Task_d8d05023" targetRef="Task_639fde87"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_44541c5d" name="" sourceRef="Task_0bfb0a73" targetRef="Task_2f735515"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_ef66721e" name="" sourceRef="Task_2f735515" targetRef="Task_963eb6e1"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_6d7a7e6a" name="" sourceRef="Task_963eb6e1" targetRef="EndEvent_2ebafbac"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_e998c827" name="" sourceRef="Task_639fde87" targetRef="Task_0bfb0a73"></bpmn:sequenceFlow>
+  </bpmn:process>
+  <bpmn:process id="Process_c4dfc734" name="Employee" isExecutable="false">
+    <bpmn:startEvent id="StartEvent_f9ae0ef0" name="">
+      <bpmn:outgoing>SequenceFlow_22ec5b5d</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="EndEvent_b719888b" name="">
+      <bpmn:incoming>SequenceFlow_3544b6fd</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="Task_cd384314" name="Receive order">
+      <bpmn:incoming>SequenceFlow_22ec5b5d</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_ac85f5c7</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_c5611ffe" name="Enter order in POS">
+      <bpmn:incoming>SequenceFlow_ac85f5c7</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0e6c2ddf</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_95de26f9" name="Collect payment">
+      <bpmn:incoming>SequenceFlow_0e6c2ddf</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_75e5650b</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_7a4b3ab7" name="Setup buzzer">
+      <bpmn:incoming>SequenceFlow_75e5650b</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_db2cf69c</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_daa742bb" name="Inform chef of order">
+      <bpmn:incoming>SequenceFlow_db2cf69c</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_21153957</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_cd31f73e" name="Check if buzzed">
+      <bpmn:incoming>SequenceFlow_21153957</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_9a0281ec</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_e0a5eb7c" name="Call guest">
+      <bpmn:incoming>SequenceFlow_b00bd3c2</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_3acb6c1a</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_85e068e0" name="Trigger buzzer">
+      <bpmn:incoming>SequenceFlow_845830a8</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_d6ff45d3</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_6c8cba00" name="Hand over meal">
+      <bpmn:incoming>SequenceFlow_d6ff45d3</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_3544b6fd</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gateway_0d5e0e85" name="No response after 5 min?" default="SequenceFlow_845830a8">
+      <bpmn:incoming>SequenceFlow_9a0281ec</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_3acb6c1a</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_b00bd3c2</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_845830a8</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="SequenceFlow_22ec5b5d" name="" sourceRef="StartEvent_f9ae0ef0" targetRef="Task_cd384314"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_ac85f5c7" name="" sourceRef="Task_cd384314" targetRef="Task_c5611ffe"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_0e6c2ddf" name="" sourceRef="Task_c5611ffe" targetRef="Task_95de26f9"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_75e5650b" name="" sourceRef="Task_95de26f9" targetRef="Task_7a4b3ab7"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_db2cf69c" name="" sourceRef="Task_7a4b3ab7" targetRef="Task_daa742bb"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_21153957" name="" sourceRef="Task_daa742bb" targetRef="Task_cd31f73e"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_9a0281ec" name="" sourceRef="Task_cd31f73e" targetRef="Gateway_0d5e0e85"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_b00bd3c2" name="" sourceRef="Gateway_0d5e0e85" targetRef="Task_e0a5eb7c">
+      <bpmn:conditionExpression type="tFormalExpression">yes</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_845830a8" name="" sourceRef="Gateway_0d5e0e85" targetRef="Task_85e068e0"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_3acb6c1a" name="" sourceRef="Task_e0a5eb7c" targetRef="Gateway_0d5e0e85"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_d6ff45d3" name="" sourceRef="Task_85e068e0" targetRef="Task_6c8cba00"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_3544b6fd" name="" sourceRef="Task_6c8cba00" targetRef="EndEvent_b719888b"></bpmn:sequenceFlow>
+  </bpmn:process>
+  <bpmn:process id="Process_1b0d6a3e" name="Chef" isExecutable="false">
+    <bpmn:startEvent id="StartEvent_8e0a6e50" name="">
+      <bpmn:outgoing>SequenceFlow_86b552f4</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="EndEvent_c6c0e6e3" name="">
+      <bpmn:incoming>SequenceFlow_1845738c</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="Task_9f31b097" name="Prepare meal">
+      <bpmn:incoming>SequenceFlow_86b552f4</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_9f84f5af</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_22a4d632" name="Place meal in service hatch">
+      <bpmn:incoming>SequenceFlow_9f84f5af</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_54a4cee7</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_571042f4" name="Notify employee meal ready">
+      <bpmn:incoming>SequenceFlow_54a4cee7</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1845738c</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="SequenceFlow_86b552f4" name="" sourceRef="StartEvent_8e0a6e50" targetRef="Task_9f31b097"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_9f84f5af" name="" sourceRef="Task_9f31b097" targetRef="Task_22a4d632"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_54a4cee7" name="" sourceRef="Task_22a4d632" targetRef="Task_571042f4"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_1845738c" name="" sourceRef="Task_571042f4" targetRef="EndEvent_c6c0e6e3"></bpmn:sequenceFlow>
+  </bpmn:process>
+  <bpmn:collaboration id="Collaboration_a9681c3a">
+    <bpmn:participant id="Participant_eafc582a" name="Guest" processRef="Process_7db274d4"></bpmn:participant>
+    <bpmn:participant id="Participant_6c5b139b" name="Employee" processRef="Process_c4dfc734"></bpmn:participant>
+    <bpmn:participant id="Participant_26463929" name="Chef" processRef="Process_1b0d6a3e"></bpmn:participant>
+    <bpmn:messageFlow id="MessageFlow_6db2b925" name="order" sourceRef="Task_639fde87" targetRef="Task_cd384314"></bpmn:messageFlow>
+    <bpmn:messageFlow id="MessageFlow_29b1f94d" name="buzzer" sourceRef="Task_7a4b3ab7" targetRef="Task_0bfb0a73"></bpmn:messageFlow>
+    <bpmn:messageFlow id="MessageFlow_673a68b8" name="order" sourceRef="Task_daa742bb" targetRef="Task_9f31b097"></bpmn:messageFlow>
+    <bpmn:messageFlow id="MessageFlow_69ff183c" name="meal ready" sourceRef="Task_571042f4" targetRef="Task_cd31f73e"></bpmn:messageFlow>
+    <bpmn:messageFlow id="MessageFlow_bb835858" name="buzzer signal" sourceRef="Task_85e068e0" targetRef="Task_0bfb0a73"></bpmn:messageFlow>
+  </bpmn:collaboration>
+  <bpmndi:BPMNDiagram id="Diagram_961673e5">
+    <bpmndi:BPMNPlane id="Plane_42830cd3" bpmnElement="Collaboration_a9681c3a">
+      <bpmndi:BPMNShape id="Shape_4e128840" bpmnElement="Participant_eafc582a" isHorizontal="true">
+        <dc:Bounds x="0" y="0" width="1792" height="160"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_a08edf48" bpmnElement="StartEvent_48990d74">
+        <dc:Bounds x="40" y="62" width="36" height="36"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_417d0113" bpmnElement="Task_c90a9556">
+        <dc:Bounds x="156" y="40" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_96607b86" bpmnElement="Task_4af00fa4">
+        <dc:Bounds x="336" y="40" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_ae8b6cc6" bpmnElement="Task_d8d05023">
+        <dc:Bounds x="516" y="40" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_19611b13" bpmnElement="Task_639fde87">
+        <dc:Bounds x="696" y="40" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_6a0d9133" bpmnElement="Task_0bfb0a73">
+        <dc:Bounds x="876" y="40" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_f8b986a0" bpmnElement="Task_2f735515">
+        <dc:Bounds x="1056" y="40" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_469906eb" bpmnElement="Task_963eb6e1">
+        <dc:Bounds x="1236" y="40" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_19ff3bdb" bpmnElement="EndEvent_2ebafbac">
+        <dc:Bounds x="1416" y="62" width="36" height="36"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_0b211201" bpmnElement="Participant_6c5b139b" isHorizontal="true">
+        <dc:Bounds x="0" y="200" width="1792" height="280"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_e877022c" bpmnElement="StartEvent_f9ae0ef0">
+        <dc:Bounds x="40" y="382" width="36" height="36"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_c29189e5" bpmnElement="Task_cd384314">
+        <dc:Bounds x="156" y="360" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_d5d8ca2d" bpmnElement="Task_c5611ffe">
+        <dc:Bounds x="336" y="360" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_3e460fe4" bpmnElement="Task_95de26f9">
+        <dc:Bounds x="516" y="360" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_35223270" bpmnElement="Task_7a4b3ab7">
+        <dc:Bounds x="696" y="360" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_858ace41" bpmnElement="Task_daa742bb">
+        <dc:Bounds x="876" y="360" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_4865976b" bpmnElement="Task_cd31f73e">
+        <dc:Bounds x="1056" y="360" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_78b57255" bpmnElement="Gateway_0d5e0e85">
+        <dc:Bounds x="1236" y="375" width="50" height="50"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_077bb0b0" bpmnElement="Task_e0a5eb7c">
+        <dc:Bounds x="1366" y="240" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_7cda39ea" bpmnElement="Task_85e068e0">
+        <dc:Bounds x="1366" y="360" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_5b812ee3" bpmnElement="Task_6c8cba00">
+        <dc:Bounds x="1546" y="360" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_6358e817" bpmnElement="EndEvent_b719888b">
+        <dc:Bounds x="1726" y="382" width="36" height="36"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_eb14f9e4" bpmnElement="Participant_26463929" isHorizontal="true">
+        <dc:Bounds x="0" y="520" width="1792" height="160"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_ef662904" bpmnElement="StartEvent_8e0a6e50">
+        <dc:Bounds x="40" y="582" width="36" height="36"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_f61ad599" bpmnElement="Task_9f31b097">
+        <dc:Bounds x="156" y="560" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_98701fae" bpmnElement="Task_22a4d632">
+        <dc:Bounds x="336" y="560" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_5b50bb61" bpmnElement="Task_571042f4">
+        <dc:Bounds x="516" y="560" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_2a80c731" bpmnElement="EndEvent_c6c0e6e3">
+        <dc:Bounds x="696" y="582" width="36" height="36"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Edge_ab4d1032" bpmnElement="SequenceFlow_c6f1db76">
+        <di:waypoint x="76" y="80"></di:waypoint>
+        <di:waypoint x="156" y="80"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_5c322057" bpmnElement="SequenceFlow_15f2a704">
+        <di:waypoint x="256" y="80"></di:waypoint>
+        <di:waypoint x="336" y="80"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_e95f1882" bpmnElement="SequenceFlow_56580ca6">
+        <di:waypoint x="436" y="80"></di:waypoint>
+        <di:waypoint x="516" y="80"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_729d6e24" bpmnElement="SequenceFlow_f38e9362">
+        <di:waypoint x="616" y="80"></di:waypoint>
+        <di:waypoint x="696" y="80"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_21f4b40b" bpmnElement="SequenceFlow_44541c5d">
+        <di:waypoint x="976" y="80"></di:waypoint>
+        <di:waypoint x="1056" y="80"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_028d7e5e" bpmnElement="SequenceFlow_ef66721e">
+        <di:waypoint x="1156" y="80"></di:waypoint>
+        <di:waypoint x="1236" y="80"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_0f99c78a" bpmnElement="SequenceFlow_6d7a7e6a">
+        <di:waypoint x="1336" y="80"></di:waypoint>
+        <di:waypoint x="1416" y="80"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_e979c947" bpmnElement="SequenceFlow_e998c827">
+        <di:waypoint x="796" y="80"></di:waypoint>
+        <di:waypoint x="876" y="80"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_c738368c" bpmnElement="SequenceFlow_22ec5b5d">
+        <di:waypoint x="76" y="400"></di:waypoint>
+        <di:waypoint x="156" y="400"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_62275ad4" bpmnElement="SequenceFlow_ac85f5c7">
+        <di:waypoint x="256" y="400"></di:waypoint>
+        <di:waypoint x="336" y="400"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_f6c9fe96" bpmnElement="SequenceFlow_0e6c2ddf">
+        <di:waypoint x="436" y="400"></di:waypoint>
+        <di:waypoint x="516" y="400"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_e05f6b74" bpmnElement="SequenceFlow_75e5650b">
+        <di:waypoint x="616" y="400"></di:waypoint>
+        <di:waypoint x="696" y="400"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_004a7dd3" bpmnElement="SequenceFlow_db2cf69c">
+        <di:waypoint x="796" y="400"></di:waypoint>
+        <di:waypoint x="876" y="400"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_f5ab2af3" bpmnElement="SequenceFlow_21153957">
+        <di:waypoint x="976" y="400"></di:waypoint>
+        <di:waypoint x="1056" y="400"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_286fa77d" bpmnElement="SequenceFlow_9a0281ec">
+        <di:waypoint x="1156" y="400"></di:waypoint>
+        <di:waypoint x="1236" y="400"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_50ea800a" bpmnElement="SequenceFlow_b00bd3c2">
+        <di:waypoint x="1261" y="375"></di:waypoint>
+        <di:waypoint x="1261" y="280"></di:waypoint>
+        <di:waypoint x="1366" y="280"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_8a6fa7f5" bpmnElement="SequenceFlow_845830a8">
+        <di:waypoint x="1286" y="400"></di:waypoint>
+        <di:waypoint x="1366" y="400"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_89a7371b" bpmnElement="SequenceFlow_3acb6c1a">
+        <di:waypoint x="1416" y="240"></di:waypoint>
+        <di:waypoint x="1416" y="180"></di:waypoint>
+        <di:waypoint x="1261" y="180"></di:waypoint>
+        <di:waypoint x="1261" y="375"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_2ff7d945" bpmnElement="SequenceFlow_d6ff45d3">
+        <di:waypoint x="1466" y="400"></di:waypoint>
+        <di:waypoint x="1546" y="400"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_c1413241" bpmnElement="SequenceFlow_3544b6fd">
+        <di:waypoint x="1646" y="400"></di:waypoint>
+        <di:waypoint x="1726" y="400"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_570a9fa6" bpmnElement="SequenceFlow_86b552f4">
+        <di:waypoint x="76" y="600"></di:waypoint>
+        <di:waypoint x="156" y="600"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_74a05858" bpmnElement="SequenceFlow_9f84f5af">
+        <di:waypoint x="256" y="600"></di:waypoint>
+        <di:waypoint x="336" y="600"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_81156ee5" bpmnElement="SequenceFlow_54a4cee7">
+        <di:waypoint x="436" y="600"></di:waypoint>
+        <di:waypoint x="516" y="600"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_0595cc62" bpmnElement="SequenceFlow_1845738c">
+        <di:waypoint x="616" y="600"></di:waypoint>
+        <di:waypoint x="696" y="600"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_f96b35dd" bpmnElement="MessageFlow_6db2b925">
+        <di:waypoint x="746" y="120"></di:waypoint>
+        <di:waypoint x="746" y="240"></di:waypoint>
+        <di:waypoint x="206" y="240"></di:waypoint>
+        <di:waypoint x="206" y="360"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_af410e25" bpmnElement="MessageFlow_29b1f94d">
+        <di:waypoint x="746" y="360"></di:waypoint>
+        <di:waypoint x="746" y="240"></di:waypoint>
+        <di:waypoint x="926" y="240"></di:waypoint>
+        <di:waypoint x="926" y="120"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_b7c0c2fc" bpmnElement="MessageFlow_673a68b8">
+        <di:waypoint x="926" y="440"></di:waypoint>
+        <di:waypoint x="926" y="500"></di:waypoint>
+        <di:waypoint x="206" y="500"></di:waypoint>
+        <di:waypoint x="206" y="560"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_65ea1727" bpmnElement="MessageFlow_69ff183c">
+        <di:waypoint x="566" y="560"></di:waypoint>
+        <di:waypoint x="566" y="500"></di:waypoint>
+        <di:waypoint x="1106" y="500"></di:waypoint>
+        <di:waypoint x="1106" y="440"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_ba2ab56b" bpmnElement="MessageFlow_bb835858">
+        <di:waypoint x="1416" y="360"></di:waypoint>
+        <di:waypoint x="1416" y="240"></di:waypoint>
+        <di:waypoint x="926" y="240"></di:waypoint>
+        <di:waypoint x="926" y="120"></di:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

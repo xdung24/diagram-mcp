@@ -1,0 +1,215 @@
+erDiagram
+    CUSTOMER ||--o{ ADDRESS : has
+    CUSTOMER ||--o| CART : owns
+    CUSTOMER ||--o{ ORDER : places
+    CUSTOMER ||--o{ REVIEW : writes
+    CUSTOMER ||--o| WISHLIST : maintains
+    
+    ADDRESS ||--o{ ORDER : "shipping_address"
+    ADDRESS ||--o{ ORDER : "billing_address"
+    
+    CATEGORY ||--o{ CATEGORY : "parent_category"
+    CATEGORY ||--o{ PRODUCT : contains
+    
+    PRODUCT ||--|{ PRODUCT_VARIANT : "has_variants"
+    PRODUCT ||--o{ REVIEW : "receives"
+    PRODUCT ||--o{ WISHLIST_ITEM : "appears_in"
+    
+    SUPPLIER ||--o{ PRODUCT : supplies
+    
+    PRODUCT_VARIANT ||--o{ INVENTORY : tracked_in
+    PRODUCT_VARIANT ||--o{ CART_ITEM : "in_cart"
+    PRODUCT_VARIANT ||--o{ ORDER_ITEM : "in_order"
+    
+    WAREHOUSE ||--o{ INVENTORY : contains
+    
+    CART ||--o{ CART_ITEM : contains
+    
+    COUPON ||--o{ ORDER : applied_to
+    
+    ORDER ||--|{ ORDER_ITEM : contains
+    ORDER ||--|{ PAYMENT : receives
+    ORDER ||--|{ SHIPMENT : generates
+    
+    SHIPPING_METHOD ||--o{ SHIPMENT : used_by
+    
+    WISHLIST ||--o{ WISHLIST_ITEM : contains
+    
+    CUSTOMER {
+        int id PK
+        string first_name
+        string last_name
+        string email UK
+        string phone
+        string password_hash
+        datetime created_at
+        boolean is_active
+    }
+    
+    ADDRESS {
+        int id PK
+        int customer_id FK
+        string label
+        string street
+        string city
+        string state
+        string postal_code
+        string country
+        boolean is_default
+    }
+    
+    CATEGORY {
+        int id PK
+        int parent_category_id FK
+        string name
+        string slug
+        string description
+    }
+    
+    PRODUCT {
+        int id PK
+        int category_id FK
+        int supplier_id FK
+        string sku UK
+        string name
+        string description
+        decimal price
+        string currency
+        decimal weight_kg
+        boolean is_active
+        datetime created_at
+    }
+    
+    PRODUCT_VARIANT {
+        int id PK
+        int product_id FK
+        string sku UK
+        string size
+        string color
+        decimal price_adjustment
+    }
+    
+    SUPPLIER {
+        int id PK
+        string name
+        string contact_email
+        string phone
+        string address
+    }
+    
+    WAREHOUSE {
+        int id PK
+        string name
+        string location
+        int capacity
+    }
+    
+    INVENTORY {
+        int id PK
+        int product_variant_id FK
+        int warehouse_id FK
+        int quantity_on_hand
+        int reorder_level
+        datetime updated_at
+    }
+    
+    CART {
+        int id PK
+        int customer_id FK
+        datetime created_at
+        datetime updated_at
+        string status
+    }
+    
+    CART_ITEM {
+        int id PK
+        int cart_id FK
+        int product_variant_id FK
+        int quantity
+        decimal unit_price
+    }
+    
+    ORDER {
+        int id PK
+        int customer_id FK
+        int shipping_address_id FK
+        int billing_address_id FK
+        int coupon_id FK
+        string order_number UK
+        datetime order_date
+        string status
+        decimal subtotal
+        decimal tax_amount
+        decimal shipping_cost
+        decimal total_amount
+    }
+    
+    ORDER_ITEM {
+        int id PK
+        int order_id FK
+        int product_variant_id FK
+        int quantity
+        decimal unit_price
+        decimal discount_amount
+        decimal line_total
+    }
+    
+    PAYMENT {
+        int id PK
+        int order_id FK
+        string payment_method
+        string transaction_id UK
+        decimal amount
+        string status
+        datetime paid_at
+    }
+    
+    SHIPMENT {
+        int id PK
+        int order_id FK
+        int shipping_method_id FK
+        string tracking_number
+        string carrier
+        datetime shipped_at
+        datetime delivered_at
+        string status
+    }
+    
+    SHIPPING_METHOD {
+        int id PK
+        string name
+        int estimated_days
+        decimal cost
+    }
+    
+    COUPON {
+        int id PK
+        string code UK
+        string discount_type
+        decimal discount_value
+        date valid_from
+        date valid_until
+        int usage_limit
+    }
+    
+    REVIEW {
+        int id PK
+        int product_id FK
+        int customer_id FK
+        int rating
+        string comment
+        datetime created_at
+    }
+    
+    WISHLIST {
+        int id PK
+        int customer_id FK
+        datetime created_at
+    }
+    
+    WISHLIST_ITEM {
+        int id PK
+        int wishlist_id FK
+        int product_id FK
+        datetime added_at
+    }

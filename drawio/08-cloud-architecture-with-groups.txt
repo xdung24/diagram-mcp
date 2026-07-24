@@ -1,0 +1,12 @@
+Create a cloud architecture diagram using generic groups (not pools/lanes)
+to cluster resources.
+
+Group "Public Subnet": rectangle "Reverse Proxy", rectangle "Load Balancer".
+Group "Private Subnet": rectangle "App Server", cylinder "Primary DB",
+cylinder "Replica DB".
+
+Outside the groups: actor "End User", cloud "Internet".
+
+Connections: End User -> Internet -> Load Balancer -> Reverse Proxy -> App
+Server -> Primary DB, Primary DB -> Replica DB (label "replication",
+dashed).

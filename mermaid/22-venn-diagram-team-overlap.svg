@@ -1,0 +1,13 @@
+<svg role="img" xmlns="http://www.w3.org/2000/svg" width="592" height="483.6" viewBox="0 0 592 483.6" font-family="sans-serif" font-size="14">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="296" y="30" fill="#333333" text-anchor="middle" font-weight="bold">Team Overlap</text>
+  <circle cx="246.5" cy="257.6" r="110" fill="#5B8FF9" fill-opacity="0.55" stroke="#9370DB" stroke-width="2"/>
+  <circle cx="345.5" cy="257.6" r="110" fill="#F6BD16" fill-opacity="0.55" stroke="#9370DB" stroke-width="2"/>
+<text fill="#333333" text-anchor="middle" font-weight="bold"><tspan x="206.46" y="257.6">Frontend</tspan></text>
+  <text x="206.46" y="273.6" fill="#333333" text-anchor="middle">UI components</text>
+  <text x="206.46" y="289.6" fill="#333333" text-anchor="middle">Client-side state</text>
+<text fill="#333333" text-anchor="middle" font-weight="bold"><tspan x="385.54" y="257.6">Backend</tspan></text>
+  <text x="385.54" y="273.6" fill="#333333" text-anchor="middle">Database</text>
+  <text x="385.54" y="289.6" fill="#333333" text-anchor="middle">Business logic</text>
+<text fill="#333333" text-anchor="middle" font-weight="bold"><tspan x="295.49" y="257.6">APIs</tspan></text>
+</svg>

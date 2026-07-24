@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio-mcp" modified="" agent="" version="24.0.0" type="device">
+  <diagram id="page-1" name="Page-1">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="">
+      <root>
+        <mxCell id="0" value="" style="" vertex="0" edge="0" parent="" source="" target="" connectable=""></mxCell>
+        <mxCell id="1" value="" style="" vertex="0" edge="0" parent="0" source="" target="" connectable=""></mxCell>
+        <mxCell id="node_258747e4" value="Customer" style="shape=actor;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="80" y="70" width="40" height="70" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_6f85374d" value="Internet" style="shape=cloud;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="260" y="70" width="120" height="80" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_a057c66c" value="Load Balancer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="440" y="70" width="140" height="60" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_b3dee1f5" value="Web Server 1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="620" y="70" width="140" height="60" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_fee8416e" value="Web Server 2" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="620" y="150" width="140" height="60" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_64e60353" value="Primary Database" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="800" y="70" width="60" height="80" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_9f2c74ac" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_258747e4" target="node_6f85374d" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_4e639ffb" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_6f85374d" target="node_a057c66c" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_f0ac5c39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_a057c66c" target="node_b3dee1f5" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_c6023c79" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_a057c66c" target="node_fee8416e" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_798b6420" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_b3dee1f5" target="node_64e60353" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_faf0dc8c" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_fee8416e" target="node_64e60353" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

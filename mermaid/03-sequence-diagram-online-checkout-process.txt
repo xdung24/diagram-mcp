@@ -1,0 +1,7 @@
+Generate a sequence diagram for an online checkout process.
+The participants are User, Browser, Server, and Stripe.
+First, the User clicks checkout on the Browser.
+The Browser then sends a POST /pay request to the Server and shows a loading spinner.
+The Server calls charge() on Stripe. Stripe returns a success token to the Server.
+The Server then returns a success response to the Browser.
+Finally, the Browser stops the loading spinner and shows a success screen to the User.

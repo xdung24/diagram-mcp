@@ -1,0 +1,66 @@
+Create a detailed entity-relationship diagram for a realistic, production-grade e-commerce database.
+
+Entities and fields:
+
+CUSTOMER: primary key id (int), fields first_name (string), last_name (string), email (string, unique), phone (string), password_hash (string), created_at (datetime), is_active (boolean).
+
+ADDRESS: primary key id (int), foreign key customer_id (int), fields label (string), street (string), city (string), state (string), postal_code (string), country (string), is_default (boolean).
+
+CATEGORY: primary key id (int), foreign key parent_category_id (int, nullable, self-referencing), fields name (string), slug (string), description (string).
+
+PRODUCT: primary key id (int), foreign key category_id (int), foreign key supplier_id (int), fields sku (string, unique), name (string), description (string), price (decimal), currency (string), weight_kg (decimal), is_active (boolean), created_at (datetime).
+
+PRODUCT_VARIANT: primary key id (int), foreign key product_id (int), fields sku (string, unique), size (string), color (string), price_adjustment (decimal).
+
+SUPPLIER: primary key id (int), fields name (string), contact_email (string), phone (string), address (string).
+
+INVENTORY: primary key id (int), foreign key product_variant_id (int), foreign key warehouse_id (int), fields quantity_on_hand (int), reorder_level (int), updated_at (datetime).
+
+WAREHOUSE: primary key id (int), fields name (string), location (string), capacity (int).
+
+CART: primary key id (int), foreign key customer_id (int), fields created_at (datetime), updated_at (datetime), status (string).
+
+CART_ITEM: primary key id (int), foreign key cart_id (int), foreign key product_variant_id (int), fields quantity (int), unit_price (decimal).
+
+ORDER: primary key id (int), foreign key customer_id (int), foreign key shipping_address_id (int), foreign key billing_address_id (int), foreign key coupon_id (int, nullable), fields order_number (string, unique), order_date (datetime), status (string), subtotal (decimal), tax_amount (decimal), shipping_cost (decimal), total_amount (decimal).
+
+ORDER_ITEM: primary key id (int), foreign key order_id (int), foreign key product_variant_id (int), fields quantity (int), unit_price (decimal), discount_amount (decimal), line_total (decimal).
+
+PAYMENT: primary key id (int), foreign key order_id (int), fields payment_method (string), transaction_id (string, unique), amount (decimal), status (string), paid_at (datetime).
+
+SHIPMENT: primary key id (int), foreign key order_id (int), foreign key shipping_method_id (int), fields tracking_number (string), carrier (string), shipped_at (datetime), delivered_at (datetime), status (string).
+
+SHIPPING_METHOD: primary key id (int), fields name (string), estimated_days (int), cost (decimal).
+
+COUPON: primary key id (int), fields code (string, unique), discount_type (string), discount_value (decimal), valid_from (date), valid_until (date), usage_limit (int).
+
+REVIEW: primary key id (int), foreign key product_id (int), foreign key customer_id (int), fields rating (int), comment (string), created_at (datetime).
+
+WISHLIST: primary key id (int), foreign key customer_id (int), fields created_at (datetime).
+
+WISHLIST_ITEM: primary key id (int), foreign key wishlist_id (int), foreign key product_id (int), fields added_at (datetime).
+
+Relationships:
+- A CUSTOMER can have zero or many ADDRESS records; each ADDRESS belongs to exactly one CUSTOMER.
+- A CATEGORY can have zero or many child CATEGORY records (self-referencing parent/child); each child CATEGORY belongs to exactly one parent CATEGORY.
+- A CATEGORY can contain zero or many PRODUCT records; each PRODUCT belongs to exactly one CATEGORY.
+- A SUPPLIER can supply zero or many PRODUCT records; each PRODUCT is supplied by exactly one SUPPLIER.
+- A PRODUCT can have one or many PRODUCT_VARIANT records; each PRODUCT_VARIANT belongs to exactly one PRODUCT.
+- A PRODUCT_VARIANT can have zero or many INVENTORY records (across warehouses); each INVENTORY record refers to exactly one PRODUCT_VARIANT.
+- A WAREHOUSE can hold zero or many INVENTORY records; each INVENTORY record belongs to exactly one WAREHOUSE.
+- A CUSTOMER can have zero or one active CART; each CART belongs to exactly one CUSTOMER.
+- A CART can contain zero or many CART_ITEM records; each CART_ITEM belongs to exactly one CART.
+- A PRODUCT_VARIANT can appear in zero or many CART_ITEM records; each CART_ITEM refers to exactly one PRODUCT_VARIANT.
+- A CUSTOMER can place zero or many ORDER records; each ORDER must belong to exactly one CUSTOMER.
+- An ADDRESS can be used as the shipping address for zero or many ORDER records, and as the billing address for zero or many ORDER records.
+- A COUPON can be applied to zero or many ORDER records; each ORDER uses zero or one COUPON.
+- An ORDER can contain one or many ORDER_ITEM records; each ORDER_ITEM belongs to exactly one ORDER.
+- A PRODUCT_VARIANT can appear in zero or many ORDER_ITEM records; each ORDER_ITEM refers to exactly one PRODUCT_VARIANT.
+- An ORDER can have one or many PAYMENT records; each PAYMENT belongs to exactly one ORDER.
+- An ORDER can have one or many SHIPMENT records; each SHIPMENT belongs to exactly one ORDER.
+- A SHIPPING_METHOD can be used by zero or many SHIPMENT records; each SHIPMENT uses exactly one SHIPPING_METHOD.
+- A PRODUCT can receive zero or many REVIEW records; each REVIEW is for exactly one PRODUCT.
+- A CUSTOMER can write zero or many REVIEW records; each REVIEW is written by exactly one CUSTOMER.
+- A CUSTOMER can have zero or one WISHLIST; each WISHLIST belongs to exactly one CUSTOMER.
+- A WISHLIST can contain zero or many WISHLIST_ITEM records; each WISHLIST_ITEM belongs to exactly one WISHLIST.
+- A PRODUCT can appear in zero or many WISHLIST_ITEM records; each WISHLIST_ITEM refers to exactly one PRODUCT.

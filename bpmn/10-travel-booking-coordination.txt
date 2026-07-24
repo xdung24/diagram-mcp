@@ -1,0 +1,30 @@
+Travel Booking Coordination (Collaboration)
+
+Background:
+A travel agency arranges trips for travelers. To confirm a trip, the agency talks to
+two independent systems: an airline reservation system and a hotel booking system.
+Both systems are operated by other companies. This is a collaboration between several
+participants that exchange messages.
+
+Goal: Please model the following as a multi-participant BPMN collaboration.
+List of participants (pools): Traveler, Travel Agency, Airline, Hotel.
+The Travel Agency is the pool we control and must be a white box with its internal
+process. The Traveler is an external party modeled as a black-box (empty) pool. The
+Airline and the Hotel are independent external systems and are also modeled as
+black-box pools — we only send requests and receive responses from them.
+
+The collaboration: the Traveler sends a trip request to the Travel Agency. An agent
+opens the request and, at the same time, sends a seat-availability request to the
+Airline and a room-availability request to the Hotel. When both the Airline and the
+Hotel reply with availability, the agent assembles a trip offer and sends it to the
+Traveler. If the Traveler declines the offer, the agent cancels the draft bookings and
+the process ends. If the Traveler accepts, the agent sends a booking confirmation to
+the Airline and a booking confirmation to the Hotel, then sends a final itinerary
+message to the Traveler, and the process ends.
+
+Each interaction between the Travel Agency and the Traveler, the Airline, or the Hotel
+is a message flow (dashed), since information passes between separate organizations.
+The Travel Agency's own steps (open request, assemble offer, cancel draft bookings)
+are linked by sequence flows and remain inside the Travel Agency pool. Note as an
+annotation: assume the Airline and Hotel always respond, so no timeout handling is
+modeled for their replies.

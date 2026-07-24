@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio-mcp" modified="" agent="" version="24.0.0" type="device">
+  <diagram id="page-1" name="Page-1">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="">
+      <root>
+        <mxCell id="0" value="" style="" vertex="0" edge="0" parent="" source="" target="" connectable=""></mxCell>
+        <mxCell id="1" value="" style="" vertex="0" edge="0" parent="0" source="" target="" connectable=""></mxCell>
+        <mxCell id="node_043df19e" value="Wake Up" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="80" y="70" width="120" height="80" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_6f84fc69" value="Am I Tired?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="260" y="70" width="90" height="80" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_ed621dca" value="Brew Coffee" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="440" y="70" width="140" height="60" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_4202538a" value="Drink Coffee" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="620" y="70" width="140" height="60" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_eceee766" value="Start Day" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="800" y="70" width="120" height="80" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_83b336d1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_043df19e" target="node_6f84fc69" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_1ff0b207" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_6f84fc69" target="node_ed621dca" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_d43130ba" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_ed621dca" target="node_4202538a" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_b1ee5fd2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_4202538a" target="node_eceee766" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_43969604" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_6f84fc69" target="node_eceee766" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry">
+            <mxPoint x="350" y="110" as=""></mxPoint>
+            <mxPoint x="350" y="60" as=""></mxPoint>
+            <mxPoint x="800" y="60" as=""></mxPoint>
+            <mxPoint x="800" y="110" as=""></mxPoint>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

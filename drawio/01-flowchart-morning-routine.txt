@@ -1,0 +1,4 @@
+Create a flowchart for a morning coffee routine, no containers needed.
+Start at a node called 'Wake Up'. Move to a decision node: 'Am I Tired?'.
+If Yes, go to 'Brew Coffee', then 'Drink Coffee', and finally end at 'Start Day'.
+If No, go straight from the decision node to 'Start Day'.

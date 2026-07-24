@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="952" height="680" viewBox="0 0 952 680">
+<defs>
+  <marker id="arrowhead" markerWidth="12" markerHeight="9" refX="9" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L9,4.5 L0,9 L2.5,4.5 Z" fill="#475569"/>
+  </marker>
+  <marker id="arrowhead-open" markerWidth="14" markerHeight="11" refX="12" refY="5.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L11,5.5 L0,11" fill="none" stroke="#475569" stroke-width="1.4"/>
+  </marker>
+  <marker id="dot" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+    <circle cx="4.5" cy="4.5" r="3" fill="#ffffff" stroke="#475569" stroke-width="1.2"/>
+  </marker>
+  <linearGradient id="grad-task" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#ffffff"/>
+    <stop offset="100%" stop-color="#eff6ff"/>
+  </linearGradient>
+  <linearGradient id="grad-subprocess" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#ffffff"/>
+    <stop offset="100%" stop-color="#f5f3ff"/>
+  </linearGradient>
+  <linearGradient id="grad-start" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#ffffff"/>
+    <stop offset="100%" stop-color="#dcfce7"/>
+  </linearGradient>
+  <linearGradient id="grad-end" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#ffffff"/>
+    <stop offset="100%" stop-color="#fee2e2"/>
+  </linearGradient>
+  <linearGradient id="grad-intermediate" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#ffffff"/>
+    <stop offset="100%" stop-color="#fef3c7"/>
+  </linearGradient>
+  <linearGradient id="grad-gateway" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#ffffff"/>
+    <stop offset="100%" stop-color="#fefce8"/>
+  </linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="1.5" dy="2" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.18"/>
+  </filter>
+</defs>
+<style>
+  .bpmn-task { fill: url(#grad-task); stroke: #2563eb; stroke-width: 2; filter: url(#shadow); }
+  .bpmn-subprocess { fill: url(#grad-subprocess); stroke: #7c3aed; stroke-width: 2; filter: url(#shadow); }
+  .bpmn-event-start { fill: url(#grad-start); stroke: #16a34a; stroke-width: 2; filter: url(#shadow); }
+  .bpmn-event-intermediate { fill: url(#grad-intermediate); stroke: #d97706; stroke-width: 2; }
+  .bpmn-event-end { fill: url(#grad-end); stroke: #dc2626; stroke-width: 3.5; filter: url(#shadow); }
+  .bpmn-gateway { fill: url(#grad-gateway); stroke: #ca8a04; stroke-width: 2; filter: url(#shadow); }
+  .bpmn-gateway-marker { stroke: #a16207; fill: none; }
+  .bpmn-flow { fill: none; stroke: #475569; stroke-width: 1.6; marker-end: url(#arrowhead); stroke-linejoin: round; stroke-linecap: round; }
+  .bpmn-label { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; font-weight: 500; fill: #1e293b; text-anchor: middle; dominant-baseline: central; }
+  .bpmn-flow-label { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; fill: #475569; text-anchor: middle; dominant-baseline: central; }
+  .bpmn-pool { fill: #ffffff; stroke: #475569; stroke-width: 2; }
+  .bpmn-pool-header { fill: #f1f5f9; stroke: #475569; stroke-width: 2; }
+  .bpmn-lane { fill: none; stroke: #94a3b8; stroke-width: 1; }
+  .bpmn-lane-header { fill: #f1f5f9; stroke: #475569; stroke-width: 1; }
+  .bpmn-annotation { fill: none; stroke: #94a3b8; stroke-width: 1; }
+  .bpmn-annotation-text { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; fill: #1e293b; }
+  .bpmn-icon { stroke: #334155; fill: none; }
+  .bpmn-data-object { fill: #ffffff; stroke: #1e293b; stroke-width: 1.4; }
+  .bpmn-data-object-fold { fill: #f3f4f6; stroke: #1e293b; stroke-width: 1.4; }
+  .bpmn-data-store { fill: #ffffff; stroke: #1e293b; stroke-width: 1.4; }
+  .bpmn-data-store-ridge { fill: none; stroke: #1e293b; stroke-width: 1; }
+  .bpmn-group { fill: none; stroke: #475569; stroke-width: 1.5; stroke-dasharray: 10,4,2,4; }
+  .bpmn-message-flow { fill: none; stroke: #1e293b; stroke-width: 1.4; stroke-dasharray: 6,4; marker-end: url(#arrowhead-open); marker-start: url(#dot); stroke-linejoin: round; stroke-linecap: round; }
+  .bpmn-association-flow { fill: none; stroke: #1e293b; stroke-width: 1; stroke-dasharray: 2,3; }
+  .bpmn-data-association-flow { fill: none; stroke: #1e293b; stroke-width: 1.2; stroke-dasharray: 4,3; marker-end: url(#arrowhead-open); stroke-linejoin: round; stroke-linecap: round; }
+</style>
+<rect x="0" y="0" width="952" height="680" fill="#ffffff"/>
+  <rect x="30.0" y="30.0" width="892.0" height="100.0" class="bpmn-pool"/>
+  <rect x="30.0" y="30.0" width="30" height="100.0" class="bpmn-pool-header"/>
+  <text x="45.0" y="80.0" transform="rotate(-90,45.0,80.0)" class="bpmn-label">Banking Frontend</text>
+  <rect x="30.0" y="170.0" width="892.0" height="160.0" class="bpmn-pool"/>
+  <rect x="30.0" y="170.0" width="30" height="160.0" class="bpmn-pool-header"/>
+  <text x="45.0" y="250.0" transform="rotate(-90,45.0,250.0)" class="bpmn-label">Scoring (Bank)</text>
+  <circle cx="88.0" cy="250.0" r="18.0" class="bpmn-event-start"/>
+  <rect x="186.0" y="210.0" width="100.0" height="80.0" rx="10" ry="10" class="bpmn-task"/>
+  <text x="232.0" y="243.0" class="bpmn-label">Send scoring</text>
+  <text x="236.0" y="257.0" class="bpmn-label">request</text>
+  <rect x="366.0" y="210.0" width="100.0" height="80.0" rx="10" ry="10" class="bpmn-task"/>
+  <text x="412.0" y="243.0" class="bpmn-label">Wait for</text>
+  <text x="416.0" y="257.0" class="bpmn-label">result</text>
+  <rect x="546.0" y="210.0" width="100.0" height="80.0" rx="10" ry="10" class="bpmn-task"/>
+  <text x="592.0" y="243.0" class="bpmn-label">Display result</text>
+  <text x="596.0" y="257.0" class="bpmn-label">to clerk</text>
+  <circle cx="744.0" cy="250.0" r="18.0" class="bpmn-event-end"/>
+  <rect x="30.0" y="370.0" width="892.0" height="280.0" class="bpmn-pool"/>
+  <rect x="30.0" y="370.0" width="30" height="280.0" class="bpmn-pool-header"/>
+  <text x="45.0" y="510.0" transform="rotate(-90,45.0,510.0)" class="bpmn-label">Scoring (Credit Protection Agency)</text>
+  <circle cx="88.0" cy="450.0" r="18.0" class="bpmn-event-start"/>
+  <text x="88.0" y="480.0" class="bpmn-label">Do level 1</text>
+  <text x="88.0" y="494.0" class="bpmn-label">scoring</text>
+  <polygon points="211.0,425.0 236.0,450.0 211.0,475.0 186.0,450.0" class="bpmn-gateway"/>
+  <line x1="201.0" y1="440.0" x2="221.0" y2="460.0" class="bpmn-gateway-marker" stroke-width="2.5"/>
+  <line x1="221.0" y1="440.0" x2="201.0" y2="460.0" class="bpmn-gateway-marker" stroke-width="2.5"/>
+  <text x="211.0" y="487.0" class="bpmn-label">Result</text>
+  <text x="211.0" y="501.0" class="bpmn-label">determined?</text>
+  <rect x="316.0" y="410.0" width="100.0" height="80.0" rx="10" ry="10" class="bpmn-task"/>
+  <text x="362.0" y="443.0" class="bpmn-label">Send result</text>
+  <text x="366.0" y="457.0" class="bpmn-label">immediately</text>
+  <rect x="316.0" y="530.0" width="100.0" height="80.0" rx="10" ry="10" class="bpmn-task"/>
+  <text x="362.0" y="563.0" class="bpmn-label">Send delay</text>
+  <text x="366.0" y="577.0" class="bpmn-label">notification</text>
+  <rect x="496.0" y="530.0" width="100.0" height="80.0" rx="10" ry="10" class="bpmn-task"/>
+  <text x="542.0" y="563.0" class="bpmn-label">Do level 2</text>
+  <text x="546.0" y="577.0" class="bpmn-label">scoring</text>
+  <rect x="676.0" y="530.0" width="100.0" height="80.0" rx="10" ry="10" class="bpmn-task"/>
+  <text x="722.0" y="570.0" class="bpmn-label">Send result</text>
+  <circle cx="874.0" cy="450.0" r="18.0" class="bpmn-event-end"/>
+  <polyline points="106.0,250.0 186.0,250.0" class="bpmn-flow"/>
+  <polyline points="286.0,250.0 366.0,250.0" class="bpmn-flow"/>
+  <polyline points="466.0,250.0 546.0,250.0" class="bpmn-flow"/>
+  <polyline points="646.0,250.0 726.0,250.0" class="bpmn-flow"/>
+  <polyline points="106.0,450.0 186.0,450.0" class="bpmn-flow"/>
+  <polyline points="236.0,450.0 316.0,450.0" class="bpmn-flow"/>
+  <polyline points="211.0,475.0 211.0,570.0 316.0,570.0" class="bpmn-flow"/>
+  <polyline points="416.0,570.0 496.0,570.0" class="bpmn-flow"/>
+  <polyline points="596.0,570.0 676.0,570.0" class="bpmn-flow"/>
+  <polyline points="416.0,450.0 856.0,450.0" class="bpmn-flow"/>
+  <polyline points="776.0,570.0 816.0,570.0 816.0,450.0 856.0,450.0" class="bpmn-flow"/>
+  <polyline points="236.0,290.0 236.0,361.0 88.0,361.0 88.0,432.0" class="bpmn-message-flow"/>
+  <rect x="111.0" y="343.0" width="102.0" height="16" rx="3" fill="#ffffff" opacity="0.85"/>
+  <text x="162.0" y="351.0" class="bpmn-flow-label">scoring request</text>
+  <polyline points="366.0,410.0 366.0,350.0 596.0,350.0 596.0,290.0" class="bpmn-message-flow"/>
+  <rect x="458.8" y="352.0" width="44.4" height="16" rx="3" fill="#ffffff" opacity="0.85"/>
+  <text x="481.0" y="360.0" class="bpmn-flow-label">result</text>
+  <polyline points="366.0,530.0 366.0,410.0 596.0,410.0 596.0,290.0" class="bpmn-message-flow"/>
+  <rect x="420.4" y="412.0" width="121.2" height="16" rx="3" fill="#ffffff" opacity="0.85"/>
+  <text x="481.0" y="420.0" class="bpmn-flow-label">delay notification</text>
+  <polyline points="726.0,530.0 726.0,410.0 596.0,410.0 596.0,290.0" class="bpmn-message-flow"/>
+  <rect x="638.8" y="392.0" width="44.4" height="16" rx="3" fill="#ffffff" opacity="0.85"/>
+  <text x="661.0" y="400.0" class="bpmn-flow-label">result</text>
+</svg>

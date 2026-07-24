@@ -1,0 +1,39 @@
+<svg role="img" xmlns="http://www.w3.org/2000/svg" width="438.69" height="466" viewBox="0 0 438.69 466" font-family="sans-serif" font-size="14">
+  <defs><marker id="seq-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333333"/></marker></defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <g transform="translate(16,16)">
+    <line x1="30.78" y1="32" x2="30.78" y2="434" stroke="#333333" stroke-dasharray="3,3"/>
+    <line x1="143.22" y1="32" x2="143.22" y2="434" stroke="#333333" stroke-dasharray="3,3"/>
+    <line x1="261.51" y1="32" x2="261.51" y2="434" stroke="#333333" stroke-dasharray="3,3"/>
+    <line x1="372.41" y1="32" x2="372.41" y2="434" stroke="#333333" stroke-dasharray="3,3"/>
+    <rect x="0" y="0" width="61.55" height="32" rx="3" fill="#ECECFF" stroke="#9370DB"/>
+    <text x="30.78" y="20.9" fill="#333333" text-anchor="middle">User</text>
+    <rect x="101.55" y="0" width="83.34" height="32" rx="3" fill="#ECECFF" stroke="#9370DB"/>
+    <text x="143.22" y="20.9" fill="#333333" text-anchor="middle">Browser</text>
+    <rect x="224.89" y="0" width="73.23" height="32" rx="3" fill="#ECECFF" stroke="#9370DB"/>
+    <text x="261.51" y="20.9" fill="#333333" text-anchor="middle">Server</text>
+    <rect x="338.12" y="0" width="68.57" height="32" rx="3" fill="#ECECFF" stroke="#9370DB"/>
+    <text x="372.41" y="20.9" fill="#333333" text-anchor="middle">Stripe</text>
+    <line x1="30.78" y1="78.8" x2="143.22" y2="78.8" stroke="#333333" marker-end="url(#seq-arrow)"/>
+    <text x="87" y="58" fill="#333333" text-anchor="middle">Click</text>
+    <text x="87" y="74.8" fill="#333333" text-anchor="middle">checkout</text>
+    <line x1="143.22" y1="114.8" x2="261.51" y2="114.8" stroke="#333333" marker-end="url(#seq-arrow)"/>
+    <text x="202.37" y="110.8" fill="#333333" text-anchor="middle">POST /pay</text>
+    <path d="M143.22,150.8 L187.22,150.8 L187.22,162.8 L143.22,162.8" fill="none" stroke="#333333" marker-end="url(#seq-arrow)"/>
+    <text x="193.22" y="156.8" fill="#333333" text-anchor="start">Show loading spinner</text>
+    <line x1="261.51" y1="186.8" x2="372.41" y2="186.8" stroke="#333333" marker-end="url(#seq-arrow)"/>
+    <text x="316.96" y="182.8" fill="#333333" text-anchor="middle">charge()</text>
+    <line x1="372.41" y1="239.6" x2="261.51" y2="239.6" stroke="#333333" stroke-dasharray="6,4" marker-end="url(#seq-arrow)"/>
+    <text x="316.96" y="218.8" fill="#333333" text-anchor="middle">Success</text>
+    <text x="316.96" y="235.6" fill="#333333" text-anchor="middle">token</text>
+    <line x1="261.51" y1="292.4" x2="143.22" y2="292.4" stroke="#333333" stroke-dasharray="6,4" marker-end="url(#seq-arrow)"/>
+    <text x="202.37" y="271.6" fill="#333333" text-anchor="middle">Success</text>
+    <text x="202.37" y="288.4" fill="#333333" text-anchor="middle">response</text>
+    <path d="M143.22,328.4 L187.22,328.4 L187.22,340.4 L143.22,340.4" fill="none" stroke="#333333" marker-end="url(#seq-arrow)"/>
+    <text x="193.22" y="334.4" fill="#333333" text-anchor="start">Stop loading spinner</text>
+    <line x1="143.22" y1="398" x2="30.78" y2="398" stroke="#333333" marker-end="url(#seq-arrow)"/>
+    <text x="87" y="360.4" fill="#333333" text-anchor="middle">Show</text>
+    <text x="87" y="377.2" fill="#333333" text-anchor="middle">success</text>
+    <text x="87" y="394" fill="#333333" text-anchor="middle">screen</text>
+  </g>
+</svg>

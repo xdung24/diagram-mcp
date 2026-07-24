@@ -1,0 +1,6 @@
+Create a state diagram for a smart light bulb.
+The initial state is 'Off'.
+When the 'turn_on' event occurs, transition to the 'On' state.
+While in the 'On' state, if the 'dim' event occurs, transition to 'Dimmed'.
+From 'Dimmed', if the 'brighten' event occurs, transition back to 'On'.
+From both 'On' and 'Dimmed', a 'turn_off' event should transition the bulb back to the 'Off' state.

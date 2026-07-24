@@ -1,0 +1,15 @@
+---
+title: Custom IoT Sync Protocol
+config:
+    theme: default
+    maxTextSize: 50000
+    maxEdges: 500
+    fontSize: 16
+---
+packet
+0-7: "Version"
+8-15: "Type"
+16-31: "Session ID"
+32-63: "Sequence Number"
+64-95: "Payload Length"
+96-127: "Checksum"

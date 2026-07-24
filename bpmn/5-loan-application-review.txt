@@ -1,0 +1,33 @@
+Loan Application Review
+
+Background:
+A regional bank processes personal loan applications. Each application must pass a
+credit check and a document verification step before a loan officer can decide, and
+larger loans additionally require manager sign-off.
+
+Goal: Please model the following process.
+Use 4 lanes: Applicant, Loan Officer, Credit Analyst, Branch Manager.
+
+An applicant submits a loan application. The loan officer receives it and opens a case
+file. From there, two things happen at the same time: the credit analyst pulls a credit
+report and scores the applicant, while the loan officer independently verifies the
+submitted documents (proof of income, ID, address). Once both the credit score and the
+document verification are complete, the loan officer reviews the combined results.
+
+If the requested amount is small, the loan officer can approve or reject it directly.
+If the requested amount is large, the case is forwarded to the branch manager, who
+gives the final approval or rejection. Whichever path is taken, an approved or rejected
+decision converges back to a single "record decision" step handled by the loan officer.
+
+If the loan officer notices that a required document is missing or unreadable during
+verification, they send the application back to the applicant with a request for the
+missing document; once the applicant resubmits, verification is repeated until the
+documents are complete.
+
+When the branch manager gives final approval on a large loan, that approval is sent
+directly to the archiving clerk role (modeled as a task in the Loan Officer lane) to
+close the file, skipping the intermediate credit-analyst and document-check steps
+since they were already completed earlier in the process.
+
+Note as an annotation: assume the credit report is always available within the same
+business day, so no timeout handling is modeled for the credit check step.

@@ -1,0 +1,6 @@
+Create a Kanban board for our current development sprint.
+We have three primary columns: 'To-Do', 'In Progress', and 'Done'.
+Here are the tasks to distribute:
+Under 'To-Do', place two tasks: 'Design checkout database schema' and 'Write API documentation'.
+Under 'In Progress', place: 'Implement OAuth2 authentication flow' and 'Fix memory leak in background worker'.
+Under 'Done', we successfully wrapped up: 'Set up staging environment' and 'Initial project scaffolding'.

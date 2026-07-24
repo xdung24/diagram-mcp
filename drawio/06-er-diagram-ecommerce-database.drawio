@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio-mcp" modified="" agent="" version="24.0.0" type="device">
+  <diagram id="page-1" name="Page-1">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="">
+      <root>
+        <mxCell id="0" value="" style="" vertex="0" edge="0" parent="" source="" target="" connectable=""></mxCell>
+        <mxCell id="1" value="" style="" vertex="0" edge="0" parent="0" source="" target="" connectable=""></mxCell>
+        <mxCell id="node_7a411383" value="Customer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="80" y="70" width="140" height="60" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_1db4b6fb" value="Order" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="260" y="70" width="140" height="60" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_48964d10" value="OrderItem" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="440" y="70" width="140" height="60" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_073cf2ec" value="Product" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="620" y="70" width="140" height="60" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_69fc385a" value="Payment" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="440" y="150" width="140" height="60" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_7fa386e9" value="places" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_7a411383" target="node_1db4b6fb" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_b03e49e4" value="contains" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_1db4b6fb" target="node_48964d10" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_28cca72a" value="references" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_48964d10" target="node_073cf2ec" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_a2c656fe" value="paid by" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_1db4b6fb" target="node_69fc385a" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

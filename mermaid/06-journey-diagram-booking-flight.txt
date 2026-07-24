@@ -1,0 +1,6 @@
+Generate a user journey diagram for booking a flight.
+Title it 'Booking a Flight'.
+It has three stages.
+Stage 1 is 'Discovery': the user searches for flights (satisfaction score 5, actors: User) and compares prices (satisfaction score 3, actors: User, Search Engine).
+Stage 2 is 'Booking': the user enters passenger details (satisfaction score 4, actors: User) and pays for the ticket (satisfaction score 1, actors: User, Payment Processor).
+Stage 3 is 'Confirmation': the user receives an email confirmation (satisfaction score 5, actors: System).

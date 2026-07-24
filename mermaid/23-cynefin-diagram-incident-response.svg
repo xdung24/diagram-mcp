@@ -1,0 +1,44 @@
+<svg role="img" xmlns="http://www.w3.org/2000/svg" width="752" height="623.6" viewBox="0 0 752 623.6" font-family="sans-serif" font-size="14">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs><marker id="cynefin-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333333"/></marker></defs>
+  <text x="376" y="30" fill="#333333" text-anchor="middle" font-weight="bold">Incident Response</text>
+  <rect x="56" y="87.6" width="320" height="240" fill="#f4a261" fill-opacity="0.35" stroke="none"/>
+  <rect x="376" y="87.6" width="320" height="240" fill="#2a9d8f" fill-opacity="0.35" stroke="none"/>
+  <rect x="56" y="327.6" width="320" height="240" fill="#e76f51" fill-opacity="0.35" stroke="none"/>
+  <rect x="376" y="327.6" width="320" height="240" fill="#e9c46a" fill-opacity="0.35" stroke="none"/>
+  <path d="M56,327.6 L82.67,331.6 L109.33,334.53 L136,335.6 L162.67,334.53 L189.33,331.6 L216,327.6 L242.67,323.6 L269.33,320.67 L296,319.6 L322.67,320.67 L349.33,323.6 L376,327.6 L402.67,331.6 L429.33,334.53 L456,335.6 L482.67,334.53 L509.33,331.6 L536,327.6 L562.67,323.6 L589.33,320.67 L616,319.6 L642.67,320.67 L669.33,323.6 L696,327.6" fill="none" stroke="#9370DB" stroke-width="2"/>
+  <path d="M376,87.6 L372,97.6 L369.07,107.6 L368,117.6 L369.07,127.6 L372,137.6 L376,147.6 L380,157.6 L382.93,167.6 L384,177.6 L382.93,187.6 L380,197.6 L376,207.6 L372,217.6 L369.07,227.6 L368,237.6 L369.07,247.6 L372,257.6 L376,267.6 L380,277.6 L382.93,287.6 L384,297.6 L382.93,307.6 L380,317.6 L376,327.6" fill="none" stroke="#9370DB" stroke-width="2"/>
+  <path d="M376,327.6 L364,351.6 L388,375.6 L364,399.6 L388,423.6 L364,447.6 L388,471.6 L364,495.6 L388,519.6 L364,543.6 L376,567.6" fill="none" stroke="#9370DB" stroke-width="2.5"/>
+  <text x="216" y="117.6" fill="#333333" text-anchor="middle" font-weight="bold">Complex</text>
+  <text x="216" y="133.6" fill="#333333" text-anchor="middle" font-size="11.2" font-style="italic">Probe → Sense → Respond</text>
+  <text x="216" y="147.2" fill="#333333" text-anchor="middle" font-size="11.2" font-style="italic">Emergent Practices</text>
+  <rect x="149.79" y="166.8" width="132.42" height="22" rx="4" fill="#ffffff" fill-opacity="0.9" stroke="#9370DB"/>
+  <text x="216" y="182" fill="#333333" text-anchor="middle" font-size="11.9">Investigate root cause</text>
+  <rect x="148.48" y="194.8" width="135.05" height="22" rx="4" fill="#ffffff" fill-opacity="0.9" stroke="#9370DB"/>
+  <text x="216" y="210" fill="#333333" text-anchor="middle" font-size="11.9">Run chaos experiment</text>
+  <text x="536" y="117.6" fill="#333333" text-anchor="middle" font-weight="bold">Complicated</text>
+  <text x="536" y="133.6" fill="#333333" text-anchor="middle" font-size="11.2" font-style="italic">Sense → Analyse → Respond</text>
+  <text x="536" y="147.2" fill="#333333" text-anchor="middle" font-size="11.2" font-style="italic">Good Practices</text>
+  <rect x="458.55" y="166.8" width="154.9" height="22" rx="4" fill="#ffffff" fill-opacity="0.9" stroke="#9370DB"/>
+  <text x="536" y="182" fill="#333333" text-anchor="middle" font-size="11.9">Analyze performance data</text>
+  <rect x="470.46" y="194.8" width="131.08" height="22" rx="4" fill="#ffffff" fill-opacity="0.9" stroke="#9370DB"/>
+  <text x="536" y="210" fill="#333333" text-anchor="middle" font-size="11.9">Expert review needed</text>
+  <text x="216" y="357.6" fill="#333333" text-anchor="middle" font-weight="bold">Chaotic</text>
+  <text x="216" y="373.6" fill="#333333" text-anchor="middle" font-size="11.2" font-style="italic">Act → Sense → Respond</text>
+  <text x="216" y="387.2" fill="#333333" text-anchor="middle" font-size="11.2" font-style="italic">Novel Practices</text>
+  <rect x="141.54" y="406.8" width="148.92" height="22" rx="4" fill="#ffffff" fill-opacity="0.9" stroke="#9370DB"/>
+  <text x="216" y="422" fill="#333333" text-anchor="middle" font-size="11.9">Page on-call immediately</text>
+  <text x="536" y="357.6" fill="#333333" text-anchor="middle" font-weight="bold">Clear</text>
+  <text x="536" y="373.6" fill="#333333" text-anchor="middle" font-size="11.2" font-style="italic">Sense → Categorise → Respond</text>
+  <text x="536" y="387.2" fill="#333333" text-anchor="middle" font-size="11.2" font-style="italic">Best Practices</text>
+  <rect x="488.33" y="406.8" width="95.35" height="22" rx="4" fill="#ffffff" fill-opacity="0.9" stroke="#9370DB"/>
+  <text x="536" y="422" fill="#333333" text-anchor="middle" font-size="11.9">Restart service</text>
+  <rect x="486.67" y="434.8" width="98.67" height="22" rx="4" fill="#ffffff" fill-opacity="0.9" stroke="#9370DB"/>
+  <text x="536" y="450" fill="#333333" text-anchor="middle" font-size="11.9">Apply known fix</text>
+  <ellipse cx="376" cy="327.6" rx="74" ry="42" fill="#adb5bd" fill-opacity="0.6" stroke="#9370DB" stroke-width="2"/>
+  <text x="376" y="303.6" fill="#333333" text-anchor="middle" font-weight="bold">Confusion</text>
+  <text x="376" y="317.2" fill="#333333" text-anchor="middle" font-size="11.2" font-style="italic">Disorder</text>
+  <text x="376" y="330.8" fill="#333333" text-anchor="middle" font-size="11.9">Unknown failure mode</text>
+  <path d="M216,87.6 Q376,59.6 536,87.6" fill="none" stroke="#333333" stroke-width="2" marker-end="url(#cynefin-arrow)"/>
+  <text x="376" y="55.6" fill="#333333" text-anchor="middle" font-style="italic">Pattern identified</text>
+</svg>

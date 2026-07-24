@@ -1,0 +1,14 @@
+Create a C4 Container diagram for an 'Internet Banking System'.
+First, let's define our user:
+A 'Customer' (Label: 'Personal Banking Customer', Description: 'A customer of the bank with personal bank accounts').
+Next, create a system boundary called 'Banking System'. Inside this boundary, place four containers:
+A Web App container named 'web_app' (Label: 'Web Application', Tech: 'Java and Spring MVC', Description: 'Delivers the static content and the internet banking single-page application').
+An SPA container named 'spa' (Label: 'Single-Page Application', Tech: 'JavaScript and Angular', Description: 'Provides all of the internet banking functionality to customers via their web browser').
+An API container named 'api_app' (Label: 'API Application', Tech: 'Java and Spring Boot', Description: 'Provides internet banking functionality via a JSON/HTTPS API').
+A Database container named 'database' (Label: 'Database', Tech: 'Relational Database Schema', Description: 'Stores user registration information, hashed credentials, and access logs').
+Finally, map the relationships:
+Customer uses the 'web_app' via 'HTTPS'.
+Customer uses the 'spa' via 'HTTPS'.
+The 'web_app' delivers the 'spa' to the Customer's browser.
+The 'spa' makes API calls to the 'api_app' using 'JSON/HTTPS'.
+The 'api_app' reads from and writes to the 'database' using 'JDBC'.

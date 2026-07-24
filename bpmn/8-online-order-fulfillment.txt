@@ -1,0 +1,27 @@
+Online Order Fulfillment (Collaboration)
+
+Background:
+An online retailer sells goods through its web shop. The order is paid through an
+external payment provider and shipped by an independent courier company. These are
+separate organizations that exchange messages with the shop.
+
+Goal: Please model the following as a multi-participant BPMN collaboration.
+There are four participants (pools): Customer, Online Shop, Payment Provider, Courier.
+Only the Online Shop is a process we control (white box). The Customer, the Payment
+Provider, and the Courier are external parties and should be modeled as black-box
+pools (empty pools) — we do not control their internal steps, we only exchange
+messages with them.
+
+The collaboration works like this. The Customer sends an order to the Online Shop.
+When the shop receives the order, it checks stock availability. If the item is out of
+stock, the shop sends an "out of stock" notice back to the Customer and the process
+ends. If the item is in stock, the shop sends a payment request to the Payment
+Provider and waits. When the Payment Provider returns a payment confirmation, the shop
+picks and packs the goods, then hands the parcel to the Courier by sending a shipment
+request. Once the parcel is handed over, the shop sends an order-confirmation message
+to the Customer and the process ends.
+
+All exchanges between the Online Shop and the Customer, the Payment Provider, and the
+Courier are message flows (dashed), because information changes hands between separate
+organizations. The internal steps of the Online Shop (check stock, pick and pack) are
+connected by sequence flows and stay entirely within the Online Shop pool.

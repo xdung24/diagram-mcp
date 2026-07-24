@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio-mcp" modified="" agent="" version="24.0.0" type="device">
+  <diagram id="page-1" name="Page-1">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="">
+      <root>
+        <mxCell id="0" value="" style="" vertex="0" edge="0" parent="" source="" target="" connectable=""></mxCell>
+        <mxCell id="1" value="" style="" vertex="0" edge="0" parent="0" source="" target="" connectable=""></mxCell>
+        <mxCell id="node_8e3674b4" value="CEO" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="80" y="70" width="140" height="60" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_30046d2f" value="VP Engineering" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="260" y="70" width="140" height="60" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_12b15b6b" value="VP Sales" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="260" y="150" width="140" height="60" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_ee4d4228" value="VP Marketing" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="260" y="230" width="140" height="60" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_d968d159" value="Engineering Manager" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="440" y="70" width="140" height="60" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_91cd9b0c" value="QA Manager" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="440" y="150" width="140" height="60" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_86ad25e5" value="Sales Manager" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="440" y="230" width="140" height="60" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="node_b02f1c9a" value="Marketing Manager" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" edge="0" parent="1" source="" target="" connectable="">
+          <mxGeometry x="440" y="310" width="140" height="60" relative="0" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_01fba913" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_8e3674b4" target="node_30046d2f" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_9c7d2f1c" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_8e3674b4" target="node_12b15b6b" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_0325ba3e" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_8e3674b4" target="node_ee4d4228" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_9d57f0a9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_30046d2f" target="node_d968d159" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_0d3ff5c4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_30046d2f" target="node_91cd9b0c" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_c0d64d11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_12b15b6b" target="node_86ad25e5" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="edge_7295221d" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" vertex="0" edge="1" parent="1" source="node_ee4d4228" target="node_b02f1c9a" connectable="">
+          <mxGeometry x="0" y="0" width="0" height="0" relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

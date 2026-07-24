@@ -1,0 +1,5 @@
+Draw a class diagram for a school system.
+There is a base class 'User' with public string fields 'name' and 'email', and a public method 'login()'.
+A class 'Student' inherits from 'User' and has an integer field 'studentId'.
+A class 'Teacher' also inherits from 'User' and has a string field 'subject'.
+There is also a class 'Course'. A 'Teacher' teaches (1-to-many relationship) 'Course.

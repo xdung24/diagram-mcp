@@ -1,0 +1,55 @@
+<mxfile host="Electron" agent="">
+  <diagram id="page-1" name="Page-1">
+    <mxGraphModel dx="1433" dy="2012" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" connectable="" style="" value="" />
+        <mxCell id="1" connectable="" parent="0" style="" value="" />
+        <mxCell id="group_05e4a331" connectable="" parent="1" style="group;whiteSpace=wrap;html=1;container=1;fillColor=none;strokeColor=#666666;dashed=1;verticalAlign=top;" value="Public Subnet" vertex="1">
+          <mxGeometry height="130" width="1340" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="node_71e2895b" connectable="" parent="group_05e4a331" style="rounded=0;whiteSpace=wrap;html=1;" value="Load Balancer" vertex="1">
+          <mxGeometry height="60" width="140" x="400" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="node_7e7a0fc2" connectable="" parent="group_05e4a331" style="rounded=0;whiteSpace=wrap;html=1;" value="Reverse Proxy" vertex="1">
+          <mxGeometry height="60" width="140" x="580" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="group_9b8b2dc6" connectable="" parent="1" style="group;whiteSpace=wrap;html=1;container=1;fillColor=none;strokeColor=#666666;dashed=1;verticalAlign=top;" value="Private Subnet" vertex="1">
+          <mxGeometry height="150" width="1340" x="40" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="node_77f6c055" connectable="" parent="group_9b8b2dc6" style="rounded=0;whiteSpace=wrap;html=1;" value="App Server" vertex="1">
+          <mxGeometry height="60" width="140" x="760" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="node_7ae2e3e8" connectable="" parent="group_9b8b2dc6" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;" value="Primary DB" vertex="1">
+          <mxGeometry height="80" width="60" x="940" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="node_80a9f534" connectable="" parent="group_9b8b2dc6" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;" value="Replica DB" vertex="1">
+          <mxGeometry height="80" width="60" x="1120" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="node_33a9bbba" connectable="" parent="1" style="shape=actor;whiteSpace=wrap;html=1;" value="End User" vertex="1">
+          <mxGeometry height="70" width="40" x="70" y="-200" as="geometry" />
+        </mxCell>
+        <mxCell id="node_d2af882b" connectable="" parent="1" style="shape=cloud;whiteSpace=wrap;html=1;" value="Internet" vertex="1">
+          <mxGeometry height="80" width="120" x="220" y="-30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_e44623a5" connectable="" edge="1" parent="1" source="node_33a9bbba" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="node_d2af882b" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_3f256d7b" connectable="" edge="1" parent="1" source="node_d2af882b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="node_71e2895b" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_6eb437cc" connectable="" edge="1" parent="1" source="node_71e2895b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="node_7e7a0fc2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_c9dd7cb3" connectable="" edge="1" parent="1" source="node_7e7a0fc2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="node_77f6c055" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_09ecb915" connectable="" edge="1" parent="1" source="node_77f6c055" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="node_7ae2e3e8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_e93358fc" connectable="" edge="1" parent="1" source="node_7ae2e3e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;" target="node_80a9f534" value="replication">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,14 @@
+Create a comprehensive treemap diagram mapping for our company's corporate budget hierarchy for the fiscal year.
+Before writing the tree data, add a configuration block to format values as currency with a thousands separator and a dollar sign.
+The central layout structure is nested under the root node 'Global Corporate Budget'.
+Inside the root, break it down into three primary operational segments:
+'Engineering & Product'
+Inside this segment, create a category called 'Infrastructure' which contains two allocations: 'Cloud Hosting' valued at 1200000, and 'Security Tools' valued at 350000.
+Create another category called 'Talent' containing 'Core Developers': 4500000 and 'QA Automation': 850000.
+'Growth & Marketing'
+Add a category called 'Paid Acquisition' containing 'Search Ads': 900000 and 'Social Media': 1400000.
+Add another category called 'Brand & PR' containing 'Conferences': 500000 and 'Sponsorships': 250000.
+'Operations & Legal'
+Add 'Office Leases': 750000.
+Add 'Legal Counsel': 400000. (Apply a special custom highlight style called 'critical_spend' directly to this Legal node).
+Finally, define the 'critical_spend' class definition styling block at the very bottom with a fill color of #ffcccc, a red stroke, and a stroke width of 2px.

@@ -1,0 +1,9 @@
+Create a packet diagram for a custom UDP network protocol we are building.
+The title should be 'Custom IoT Sync Protocol'.
+The packet layout is defined as follows:
+The first 8 bits (0 to 7) are dedicated to the 'Version' field.
+The next 8 bits (8 to 15) contain the 'Type' field.
+The next 16 bits (16 to 31) are for the 'Session ID'.
+The next 32 bits (32 to 63) are used for the 'Sequence Number'.
+The next 32 bits (64 to 95) represent the 'Payload Length'.
+The remaining space from bit 96 to 127 is reserved for the 'Checksum'

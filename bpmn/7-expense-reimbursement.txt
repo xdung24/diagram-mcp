@@ -1,0 +1,27 @@
+Expense Reimbursement
+
+Background:
+Employees at a mid-size company submit expense reports that must be approved by
+their manager and then processed by finance before reimbursement is paid out.
+
+Goal: Please model the following process.
+Use 3 lanes: Employee, Manager, Finance.
+
+An employee fills out an expense report and submits it with receipts attached. The
+manager reviews the report. If the manager rejects it (for example, missing receipts or
+policy violations), the report is sent back to the employee with comments; the employee
+corrects the report and resubmits it, and the manager reviews it again. This can repeat
+until the manager approves.
+
+Once the manager approves, the report goes to finance. Finance checks whether the
+report is under the standard reimbursement threshold or over it. If it's under the
+threshold, finance processes payment directly. If it's over the threshold, finance
+routes it to the manager for a second, higher-level approval before payment is
+processed. Both the direct-payment path and the second-approval path converge back to
+a single "process payment" step in the Finance lane.
+
+After payment is processed, finance sends a confirmation directly back to the employee,
+letting them know the reimbursement has been paid.
+
+Note as an annotation: assume all currency amounts are already in the company's home
+currency, so no currency-conversion step is modeled.

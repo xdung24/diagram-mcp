@@ -1,0 +1,4 @@
+Can you put together a sankey diagram that shows how our annual company revenue flows out to where the money actually goes?
+All of our revenue comes from three streams: Product Sales bring in $600k, Subscriptions add $300k, and Consulting brings in $100k.
+That combined revenue then flows into our major spending buckets: Salaries take $500k, Marketing takes $150k, Cloud Infrastructure takes $120k, Office and Facilities take $80k, and whatever is left over, $150k, goes into Retained Earnings.
+Title it 'Annual Revenue Flow'.

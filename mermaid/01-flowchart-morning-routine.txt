@@ -1,0 +1,4 @@
+Create a vertical flowchart for a morning coffee decision.
+Start at a node called 'Wake up'. Move to a decision node: 'Am I tired?'.
+If Yes, go to 'Brew Coffee', then 'Drink Coffee', and finally end at 'Start Day'.
+If No, go straight from the decision node to 'Start Day'.

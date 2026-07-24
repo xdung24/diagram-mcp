@@ -1,0 +1,52 @@
+<svg role="img" xmlns="http://www.w3.org/2000/svg" width="1137.02" height="740" viewBox="0 0 1137.02 740" font-family="sans-serif" font-size="14">
+  <defs><marker id="block-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333333"/></marker></defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <rect x="16" y="110" width="1105.02" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="568.51" y="140.6">🔵 Dashboard</tspan></text>
+  <rect x="152.6" y="204" width="118.26" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="211.73" y="234.6">space</tspan></text>
+  <rect x="314.85" y="204" width="224" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="426.85" y="234.6">📊 Data Sources</tspan></text>
+  <rect x="582.85" y="204" width="90" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="627.85" y="234.6">space</tspan></text>
+  <rect x="716.85" y="204" width="224" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="828.85" y="234.6">⚙️ Processing</tspan></text>
+  <rect x="16" y="298" width="254.85" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="143.43" y="328.6">space</tspan></text>
+  <rect x="314.85" y="298" width="90" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="359.85" y="328.6">space</tspan></text>
+  <rect x="448.85" y="298" width="90" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="493.85" y="328.6">Database</tspan></text>
+  <rect x="582.85" y="298" width="90" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="627.85" y="328.6">API</tspan></text>
+  <rect x="716.85" y="298" width="90" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="761.85" y="328.6">Files</tspan></text>
+  <rect x="850.85" y="298" width="90" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="895.85" y="328.6">space</tspan></text>
+  <rect x="984.85" y="298" width="136.16" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="1052.94" y="320.2">ETL</tspan><tspan x="1052.94" y="337">Pipeline</tspan></text>
+  <rect x="16" y="392" width="92.6" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="62.3" y="422.6">Transform</tspan></text>
+  <rect x="152.6" y="392" width="118.26" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="211.73" y="414.2">ML</tspan><tspan x="211.73" y="431">Model</tspan></text>
+  <rect x="314.85" y="392" width="224" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="426.85" y="422.6">space</tspan></text>
+  <rect x="582.85" y="392" width="90" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="627.85" y="422.6">space</tspan></text>
+  <rect x="716.85" y="392" width="404.16" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="918.94" y="422.6">space</tspan></text>
+  <rect x="16" y="486" width="92.6" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="62.3" y="516.6">Aggregate</tspan></text>
+  <rect x="152.6" y="486" width="118.26" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="211.73" y="516.6">Cache</tspan></text>
+  <rect x="314.85" y="486" width="224" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="426.85" y="516.6">space</tspan></text>
+  <rect x="16" y="674" width="92.6" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="62.3" y="704.6">space</tspan></text>
+  <rect x="152.6" y="674" width="252.26" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="278.73" y="704.6">🎨 Visualizations</tspan></text>
+  <rect x="448.85" y="674" width="224" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="560.85" y="704.6">↔️ Alerts</tspan></text>
+  <rect x="716.85" y="674" width="224" height="50" rx="3" fill="#ECECFF" stroke="#9370DB" stroke-width="1.5"/>
+<text fill="#333333" text-anchor="middle"><tspan x="828.85" y="704.6">Export</tspan></text>
+</svg>

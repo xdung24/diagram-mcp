@@ -1,0 +1,29 @@
+Insurance Claim Handling (Collaboration)
+
+Background:
+A car insurance company handles damage claims. When a customer reports damage, the
+insurer coordinates with an independent repair garage to fix the vehicle. The customer
+and the garage are separate parties that communicate with the insurer by exchanging
+messages.
+
+Goal: Please model the following as a multi-participant BPMN collaboration.
+The participants (pools) are: Policyholder, Insurance Company, Repair Garage.
+The Insurance Company is the process we control and must be a white-box pool with its
+full internal flow. The Policyholder is an external party and should be a black-box
+(empty) pool. The Repair Garage is also modeled as a black-box pool — we send it work
+and receive an outcome, but we do not model its internal repair steps.
+
+The flow: the Policyholder submits a claim to the Insurance Company. A claims handler
+registers the claim and then verifies whether the policy is valid. If the policy is
+not valid, the handler sends a rejection message to the Policyholder and the process
+ends. If the policy is valid, the handler assesses the damage. If the estimated cost
+is above the threshold, an assessor must approve the claim before continuing;
+otherwise it continues directly. Once approved (or if approval was not required), the
+Insurance Company sends a repair order to the Repair Garage and waits. When the Repair
+Garage returns a repair-completed message, the handler releases the payment and sends a
+settlement notice to the Policyholder, and the process ends.
+
+Every hand-off between the Insurance Company and the Policyholder or the Repair Garage
+is a message flow (dashed). The internal steps inside the Insurance Company (register
+claim, verify policy, assess damage, approve, release payment) are connected by
+sequence flows and must not cross the pool boundary.

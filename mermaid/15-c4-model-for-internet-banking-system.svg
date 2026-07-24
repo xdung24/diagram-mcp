@@ -1,0 +1,40 @@
+<svg role="img" xmlns="http://www.w3.org/2000/svg" width="313.43" height="792" viewBox="0 0 313.43 792" font-family="sans-serif" font-size="14">
+  <defs><marker id="c4-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333333"/></marker></defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <g transform="translate(28,16)">
+    <rect x="-12" y="150" width="224" height="610" rx="6" fill="none" stroke="#9370DB" stroke-dasharray="6,4"/>
+    <text x="0" y="172" fill="#333333" text-anchor="start" font-weight="bold">Banking System</text>
+    <path d="M137.24,92 L137.24,135 L100,135 L100,192" fill="none" stroke="#333333" stroke-dasharray="4,3" marker-end="url(#c4-arrow)"/>
+    <text x="111.62" y="135" fill="#333333" text-anchor="middle" dy="-2">Uses</text>
+    <path d="M203.34,92 L203.34,135 L240.58,135 L240.58,224 L240.58,306 L100,306 L100,356" fill="none" stroke="#333333" stroke-dasharray="4,3" marker-end="url(#c4-arrow)"/>
+    <text x="240.58" y="275.67" fill="#333333" text-anchor="middle" dy="-2">Uses</text>
+    <path d="M100,256 L100,356" fill="none" stroke="#333333" stroke-dasharray="4,3" marker-end="url(#c4-arrow)"/>
+    <text x="100" y="306" fill="#333333" text-anchor="middle" dy="-2">Delivers</text>
+    <path d="M100,420 L100,520" fill="none" stroke="#333333" stroke-dasharray="4,3" marker-end="url(#c4-arrow)"/>
+    <text x="100" y="470" fill="#333333" text-anchor="middle" dy="-2">Makes API calls to</text>
+    <path d="M100,584 L100,684" fill="none" stroke="#333333" stroke-dasharray="4,3" marker-end="url(#c4-arrow)"/>
+    <text x="100" y="634" fill="#333333" text-anchor="middle" dy="-2">Reads from and writes to</text>
+    <rect x="71.15" y="0" width="198.29" height="92" rx="16" fill="#08427b" stroke="#08427b"/>
+    <text x="170.29" y="18" fill="#ffffff" text-anchor="middle" font-weight="bold">Personal Banking Customer</text>
+    <text x="170.29" y="28" fill="#e6e6e6" text-anchor="middle" font-size="11.2">[Person]</text>
+    <text x="170.29" y="42" fill="#f0f0f0" text-anchor="middle" font-size="11.2">A customer of the bank</text>
+    <text x="170.29" y="56" fill="#f0f0f0" text-anchor="middle" font-size="11.2">with personal bank</text>
+    <text x="170.29" y="70" fill="#f0f0f0" text-anchor="middle" font-size="11.2">accounts</text>
+    <rect x="19.92" y="192" width="160.16" height="64" rx="4" fill="#1168bd" stroke="#1168bd"/>
+    <text x="100" y="210" fill="#ffffff" text-anchor="middle" font-weight="bold">Web Application</text>
+    <text x="100" y="220" fill="#e6e6e6" text-anchor="middle" font-size="11.2">[Container]</text>
+    <text x="100" y="234" fill="#f0f0f0" text-anchor="middle" font-size="11.2">Java and Spring MVC</text>
+    <rect x="13.69" y="356" width="172.62" height="64" rx="4" fill="#1168bd" stroke="#1168bd"/>
+    <text x="100" y="374" fill="#ffffff" text-anchor="middle" font-weight="bold">Single-Page Application</text>
+    <text x="100" y="384" fill="#e6e6e6" text-anchor="middle" font-size="11.2">[Container]</text>
+    <text x="100" y="398" fill="#f0f0f0" text-anchor="middle" font-size="11.2">JavaScript and Angular</text>
+    <rect x="21.07" y="520" width="157.85" height="64" rx="4" fill="#1168bd" stroke="#1168bd"/>
+    <text x="100" y="538" fill="#ffffff" text-anchor="middle" font-weight="bold">API Application</text>
+    <text x="100" y="548" fill="#e6e6e6" text-anchor="middle" font-size="11.2">[Container]</text>
+    <text x="100" y="562" fill="#f0f0f0" text-anchor="middle" font-size="11.2">Java and Spring Boot</text>
+    <rect x="0" y="684" width="200" height="64" rx="4" fill="#1168bd" stroke="#1168bd"/>
+    <text x="100" y="702" fill="#ffffff" text-anchor="middle" font-weight="bold">Database</text>
+    <text x="100" y="712" fill="#e6e6e6" text-anchor="middle" font-size="11.2">[Container]</text>
+    <text x="100" y="726" fill="#f0f0f0" text-anchor="middle" font-size="11.2">Relational Database Schema</text>
+  </g>
+</svg>

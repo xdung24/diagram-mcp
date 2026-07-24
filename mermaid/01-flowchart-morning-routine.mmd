@@ -1,0 +1,12 @@
+flowchart TD
+    A["Wake up"]
+    B{"Am I tired?"}
+    C["Brew Coffee"]
+    D["Drink Coffee"]
+    E["Start Day"]
+    
+    A --> B
+    B -->|Yes| C
+    C --> D
+    D --> E
+    B -->|No| E

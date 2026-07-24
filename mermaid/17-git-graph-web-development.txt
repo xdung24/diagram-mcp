@@ -1,0 +1,6 @@
+Create a git log diagram showing a standard development workflow.
+Start on the default 'main' branch with an initial commit: 'Initial commit'. Follow it up with a second commit on main: 'Setup project configuration', and tag this second commit as 'v1.0.0'.
+Next, create a new branch named 'feature-login' and switch to it. Make two commits on this new feature branch: 'Add login UI components' and 'Integrate OAuth authentication provider'.
+While working on the feature, a bug is discovered in production. Switch back to the 'main' branch. From 'main', create a new hotfix branch called 'hotfix-api' and switch to it. Make a single commit on this branch: 'Fix critical null pointer exception in payment API'.
+Now, switch back to 'main' and merge the 'hotfix-api' branch into it. Tag this merge commit as 'v1.0.1'.
+Finally, switch back to the 'feature-login' branch and make one last commit: 'Add unit tests for login flow'.

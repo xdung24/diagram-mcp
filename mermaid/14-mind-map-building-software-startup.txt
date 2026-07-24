@@ -1,0 +1,7 @@
+Create a mind map for building a software startup.
+The central root node should be a circle called 'Software Startup'.
+Branch out into four main pillars:
+'Product Development': Inside this branch, add 'MVP Features' (which has a sub-node 'Core Value Prop') and 'Tech Stack' (which has two sub-nodes: 'Frontend' and 'Backend').
+'Market Validation': This should be shaped like a cloud. Inside it, put 'User Interviews' and 'Competitor Analysis'.
+'Funding & Legal': This should be shaped like a hexagon. Inside it, put 'Incorporation' and 'Fundraising' (which has sub-nodes 'Angel Investors' and 'Venture Capital').
+'Growth & Marketing': Inside it, put 'Launch Strategy' and 'Customer Acquisition'.

@@ -1,0 +1,8 @@
+Can you create a Cynefin framework diagram categorizing our incident response playbook by complexity domain?
+Complex: "Investigate root cause" and "Run chaos experiment" (patterns only visible in hindsight, needs probing).
+Complicated: "Analyze performance data" and "Expert review needed" (requires expert analysis).
+Clear: "Restart service" and "Apply known fix" (well-known best-practice procedures).
+Chaotic: "Page on-call immediately" (no time to analyze, must act first).
+Confusion: "Unknown failure mode" (we don't yet know which domain this belongs to).
+Show a transition from Complex to Complicated labeled "Pattern identified" once a recurring issue becomes understood.
+Title it "Incident Response".

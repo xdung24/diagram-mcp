@@ -1,0 +1,51 @@
+<svg role="img" xmlns="http://www.w3.org/2000/svg" width="758.26" height="640" viewBox="0 0 758.26 640" font-family="sans-serif" font-size="14">
+  <defs><marker id="req-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333333"/></marker></defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <g transform="translate(16,16)">
+    <path d="M293.48,372 L293.48,422 L120.93,422 L120.93,472" fill="none" stroke="#333333" stroke-dasharray="4,3" marker-end="url(#req-arrow)"/>
+    <text x="207.21" y="422" fill="#333333" text-anchor="middle" dy="-2">«derives»</text>
+    <path d="M120.93,136 L120.93,304 L120.93,472" fill="none" stroke="#333333" stroke-dasharray="4,3" marker-end="url(#req-arrow)"/>
+    <text x="120.93" y="304" fill="#333333" text-anchor="middle" dy="-2">«derives»</text>
+    <path d="M398.34,104 L398.34,186 L254.46,186 L254.46,236" fill="none" stroke="#333333" stroke-dasharray="4,3" marker-end="url(#req-arrow)"/>
+    <text x="342.4" y="186" fill="#333333" text-anchor="middle" dy="-2">«satisfies»</text>
+    <path d="M643.45,104 L643.45,186 L332.49,186 L332.49,236" fill="none" stroke="#333333" stroke-dasharray="4,3" marker-end="url(#req-arrow)"/>
+    <text x="503.97" y="186" fill="#333333" text-anchor="middle" dy="-2">«verifies»</text>
+    <rect x="0" y="472" width="241.87" height="136" rx="3" ry="3" fill="#f96" stroke="#333"/>
+    <text x="120.93" y="488" fill="#fff" text-anchor="middle">«requirement»</text>
+    <text x="120.93" y="504" fill="#fff" text-anchor="middle" font-weight="bold">CollisionAvoidance</text>
+    <text x="120.93" y="520" fill="#fff" text-anchor="middle">ID: REQ-001</text>
+    <text x="120.93" y="536" fill="#fff" text-anchor="middle">Text: The system shall</text>
+    <text x="120.93" y="552" fill="#fff" text-anchor="middle">automatically apply brakes to avoid</text>
+    <text x="120.93" y="568" fill="#fff" text-anchor="middle">collision with obstacles.</text>
+    <text x="120.93" y="584" fill="#fff" text-anchor="middle">Risk: High</text>
+    <text x="120.93" y="600" fill="#fff" text-anchor="middle">Verification: Test</text>
+    <rect x="176.43" y="236" width="234.08" height="136" rx="3" ry="3" fill="#fc6" stroke="#333"/>
+    <text x="293.48" y="252" fill="#333333" text-anchor="middle">«requirement»</text>
+    <text x="293.48" y="268" fill="#333333" text-anchor="middle" font-weight="bold">ObstacleDetection</text>
+    <text x="293.48" y="284" fill="#333333" text-anchor="middle">ID: REQ-001.1</text>
+    <text x="293.48" y="300" fill="#333333" text-anchor="middle">Text: The system must detect</text>
+    <text x="293.48" y="316" fill="#333333" text-anchor="middle">obstacles within 150 meters using</text>
+    <text x="293.48" y="332" fill="#333333" text-anchor="middle">LiDAR and Camera.</text>
+    <text x="293.48" y="348" fill="#333333" text-anchor="middle">Risk: Medium</text>
+    <text x="293.48" y="364" fill="#333333" text-anchor="middle">Verification: Test</text>
+    <rect x="5.85" y="0" width="230.18" height="136" rx="3" ry="3" fill="#f96" stroke="#333"/>
+    <text x="120.93" y="16" fill="#fff" text-anchor="middle">«requirement»</text>
+    <text x="120.93" y="32" fill="#fff" text-anchor="middle" font-weight="bold">BrakingForce</text>
+    <text x="120.93" y="48" fill="#fff" text-anchor="middle">ID: REQ-001.2</text>
+    <text x="120.93" y="64" fill="#fff" text-anchor="middle">Text: The system must apply</text>
+    <text x="120.93" y="80" fill="#fff" text-anchor="middle">maximum braking deceleration of</text>
+    <text x="120.93" y="96" fill="#fff" text-anchor="middle">9.8 m/s².</text>
+    <text x="120.93" y="112" fill="#fff" text-anchor="middle">Risk: High</text>
+    <text x="120.93" y="128" fill="#fff" text-anchor="middle">Verification: Test</text>
+    <rect x="291.02" y="32" width="214.62" height="72" rx="3" ry="3" fill="#ECECFF" stroke="#9370DB"/>
+    <text x="398.34" y="48" fill="#333333" text-anchor="middle">«element»</text>
+    <text x="398.34" y="64" fill="#333333" text-anchor="middle" font-weight="bold">SensorFusionModule</text>
+    <text x="398.34" y="80" fill="#333333" text-anchor="middle">Type: interface</text>
+    <text x="398.34" y="96" fill="#333333" text-anchor="middle">Doc Ref: SensorFusionModule</text>
+    <rect x="560.65" y="32" width="165.61" height="72" rx="3" ry="3" fill="#ECECFF" stroke="#9370DB"/>
+    <text x="643.45" y="48" fill="#333333" text-anchor="middle">«element»</text>
+    <text x="643.45" y="64" fill="#333333" text-anchor="middle" font-weight="bold">ObstacleDetectionTest</text>
+    <text x="643.45" y="80" fill="#333333" text-anchor="middle">Type: test</text>
+    <text x="643.45" y="96" fill="#333333" text-anchor="middle">Doc Ref: Simulation</text>
+  </g>
+</svg>

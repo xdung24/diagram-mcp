@@ -1,0 +1,12 @@
+Create a swimlane process diagram for an employee expense approval workflow.
+
+Use one pool named "Acme Corp" with two lanes: "Employee" and "Manager".
+
+In the Employee lane: a start event "Submit Expense Report", and an end
+event "Done".
+
+In the Manager lane: a task "Review Report", a decision "Approved?", a task
+"Reimburse Employee", and a task "Notify Rejection".
+
+Flow: Submit Expense Report -> Review Report -> Approved?. If yes, go to
+Reimburse Employee then Done. If no, go to Notify Rejection then Done.

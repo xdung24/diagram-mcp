@@ -1,0 +1,25 @@
+<svg role="img" xmlns="http://www.w3.org/2000/svg" width="200.3" height="442" viewBox="0 0 200.3 442" font-family="sans-serif" font-size="14">
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333333"/></marker></defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <g transform="translate(16,16)">
+    <path d="M113.6,42 L113.6,92" fill="none" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <path d="M95.65,134 L95.65,159 L58.9,159 L58.9,184" fill="none" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <rect x="62.21" y="145" width="30.12" height="18" fill="#ffffff"/>
+    <text x="77.27" y="159" fill="#333333" text-anchor="middle" dy="-2">Yes</text>
+    <path d="M58.9,226 L58.9,276" fill="none" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <path d="M58.9,318 L58.9,368" fill="none" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <path d="M131.55,134 L131.55,159 L168.3,159 L168.3,205 L168.3,297 L168.3,343 L58.9,343 L58.9,368" fill="none" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <rect x="83.28" y="237" width="23.89" height="18" fill="#ffffff"/>
+    <text x="95.22" y="251" fill="#333333" text-anchor="middle" dy="-2">No</text>
+    <rect x="65.98" y="0" width="95.24" height="42" fill="#ECECFF" stroke="#9370DB"/>
+    <text fill="#333333" text-anchor="middle"><tspan x="113.6" y="25.9">Wake up</tspan></text>
+    <polygon points="113.6,92 167.44,113 113.6,134 59.75,113" fill="#ECECFF" stroke="#9370DB"/>
+    <text fill="#333333" text-anchor="middle"><tspan x="113.6" y="117.9">Am I tired?</tspan></text>
+    <rect x="0.38" y="184" width="117.03" height="42" fill="#ECECFF" stroke="#9370DB"/>
+    <text fill="#333333" text-anchor="middle"><tspan x="58.9" y="209.9">Brew Coffee</tspan></text>
+    <rect x="0" y="276" width="117.8" height="42" fill="#ECECFF" stroke="#9370DB"/>
+    <text fill="#333333" text-anchor="middle"><tspan x="58.9" y="301.9">Drink Coffee</tspan></text>
+    <rect x="9.72" y="368" width="98.35" height="42" fill="#ECECFF" stroke="#9370DB"/>
+    <text fill="#333333" text-anchor="middle"><tspan x="58.9" y="393.9">Start Day</tspan></text>
+  </g>
+</svg>

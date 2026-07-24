@@ -1,0 +1,8 @@
+Create an entity-relationship-style diagram for a small e-commerce database
+(plain rectangles for entities, no containers).
+
+Entities: "Customer", "Order", "OrderItem", "Product", "Payment".
+
+Relationships (draw as connectors with labels): Customer -> Order (label
+"places"), Order -> OrderItem (label "contains"), OrderItem -> Product
+(label "references"), Order -> Payment (label "paid by").

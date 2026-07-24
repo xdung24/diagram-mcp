@@ -1,0 +1,16 @@
+I need a comprehensive Gantt chart for our 'Cloud Migration Initiative'.
+First, some project-wide settings:
+The date format is YYYY-MM-DD.
+We only work weekdays! Exclude weekends from the timeline calculations.
+Let's start on October 1st, 2026.
+Phase 1: Discovery & Planning
+Task 1: 'Infrastructure Audit'. This is already completed (mark it done). It starts Oct 1st and takes 4 working days. Label it audit.
+Task 2: 'Risk Assessment'. This is also done. It runs in parallel to the audit, starting Oct 1st, but only takes 2 days. Label it risk.
+Task 3: 'Migration Strategy Formulation'. This is currently active. It can only start after BOTH audit and risk are completely finished. It takes 5 working days. Label it strategy.
+Phase 2: Execution
+Task 4: 'Database Replication Setup'. This is on our critical path! It starts as soon as strategy is completed. It will take 8 working days. Label it db_setup.
+Task 5: 'App Refactoring'. This is also critical and starts at the same time as db_setup (after strategy ends), but it's a massive job taking 14 working days. Label it app_refactor.
+Task 6: 'Data Sync'. This starts only after db_setup is finished, taking 3 days. Label it data_sync.
+Phase 3: Go-Live
+Task 7: 'User Acceptance Testing (UAT)'. This starts only when BOTH app_refactor and data_sync are completed. It takes 5 working days. Label it uat.
+Milestone: 'Production Cutover'. This milestone is reached immediately after uat ends.

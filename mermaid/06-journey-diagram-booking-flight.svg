@@ -1,0 +1,26 @@
+<svg role="img" xmlns="http://www.w3.org/2000/svg" width="878.7" height="286.6" viewBox="0 0 878.7 286.6" font-family="sans-serif" font-size="14">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="439.35" y="30" fill="#333333" text-anchor="middle" font-weight="bold">Booking a Flight</text>
+  <rect x="16" y="47.6" width="278" height="22" fill="#e74c3c" fill-opacity="0.25"/>
+  <text x="155" y="63" fill="#333333" text-anchor="middle">Discovery</text>
+  <rect x="312" y="47.6" width="340.66" height="22" fill="#e67e22" fill-opacity="0.25"/>
+  <text x="482.33" y="63" fill="#333333" text-anchor="middle">Booking</text>
+  <rect x="670.66" y="47.6" width="192.04" height="22" fill="#f1c40f" fill-opacity="0.25"/>
+  <text x="766.68" y="63" fill="#333333" text-anchor="middle">Confirmation</text>
+  <path d="M81,82.8 L229,144.6 L397.54,113.7 L576.87,206.4 L766.68,82.8" fill="none" stroke="#333333" stroke-width="2"/>
+  <circle cx="81" cy="82.8" r="9" fill="#27ae60" stroke="#9370DB"/>
+  <text x="81" y="233.6" fill="#333333" text-anchor="middle">Search for flights</text>
+  <text x="81" y="253.7" fill="#333333" text-anchor="middle" font-size="11.2">User</text>
+  <circle cx="229" cy="144.6" r="9" fill="#f1c40f" stroke="#9370DB"/>
+  <text x="229" y="233.6" fill="#333333" text-anchor="middle">Compare prices</text>
+  <text x="229" y="253.7" fill="#333333" text-anchor="middle" font-size="11.2">User, Search Engine</text>
+  <circle cx="397.54" cy="113.7" r="9" fill="#2ecc71" stroke="#9370DB"/>
+  <text x="397.54" y="233.6" fill="#333333" text-anchor="middle">Enter passenger details</text>
+  <text x="397.54" y="253.7" fill="#333333" text-anchor="middle" font-size="11.2">User</text>
+  <circle cx="576.87" cy="206.4" r="9" fill="#e74c3c" stroke="#9370DB"/>
+  <text x="576.87" y="233.6" fill="#333333" text-anchor="middle">Pay for the ticket</text>
+  <text x="576.87" y="253.7" fill="#333333" text-anchor="middle" font-size="11.2">User, Payment Processor</text>
+  <circle cx="766.68" cy="82.8" r="9" fill="#27ae60" stroke="#9370DB"/>
+  <text x="766.68" y="233.6" fill="#333333" text-anchor="middle">Receive email confirmation</text>
+  <text x="766.68" y="253.7" fill="#333333" text-anchor="middle" font-size="11.2">System</text>
+</svg>

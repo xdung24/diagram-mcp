@@ -1,0 +1,43 @@
+requirementDiagram
+
+    requirement CollisionAvoidance {
+      id: "REQ-001"
+      text: "The system shall automatically apply brakes to avoid collision with obstacles."
+      risk: high
+      verifymethod: test
+    }
+
+    requirement ObstacleDetection {
+      id: "REQ-001.1"
+      text: "The system must detect obstacles within 150 meters using LiDAR and Camera."
+      risk: medium
+      verifymethod: test
+    }
+
+    requirement BrakingForce {
+      id: "REQ-001.2"
+      text: "The system must apply maximum braking deceleration of 9.8 m/s²."
+      risk: high
+      verifymethod: test
+    }
+
+    element SensorFusionModule {
+      type: "interface"
+      docRef: "SensorFusionModule"
+    }
+
+    element ObstacleDetectionTest {
+      type: "test"
+      docRef: "Simulation"
+    }
+
+    CollisionAvoidance <- derives - ObstacleDetection
+    CollisionAvoidance <- derives - BrakingForce
+    
+    SensorFusionModule - satisfies -> ObstacleDetection
+    ObstacleDetectionTest - verifies -> ObstacleDetection
+
+    classDef highRisk fill:#f96,stroke:#333,color:#fff
+    classDef mediumRisk fill:#fc6,stroke:#333
+    class CollisionAvoidance,BrakingForce highRisk
+    class ObstacleDetection mediumRisk

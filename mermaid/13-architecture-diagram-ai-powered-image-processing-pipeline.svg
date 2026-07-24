@@ -1,0 +1,78 @@
+<svg role="img" xmlns="http://www.w3.org/2000/svg" width="646" height="608" viewBox="0 0 646 608" font-family="sans-serif" font-size="16">
+  <defs><marker id="arch-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333333"/></marker></defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <g transform="translate(16,16)">
+    <rect x="0" y="0" width="202" height="156" rx="6" fill="none" stroke="#9370DB" stroke-dasharray="4,3"/>
+    <g fill="#9370DB">
+      <circle cx="12.48" cy="12.96" r="3.07"/>
+      <circle cx="16.48" cy="10.08" r="4.03"/>
+      <circle cx="20.48" cy="12.32" r="2.88"/>
+      <rect x="9.6" y="12.32" width="12.8" height="3.52" rx="1.6"/>
+    </g>
+    <text x="28" y="20" fill="#333333">Web Tier</text>
+    <rect x="0" y="312" width="202" height="264" rx="6" fill="none" stroke="#9370DB" stroke-dasharray="4,3"/>
+    <g fill="#9370DB">
+      <circle cx="12.48" cy="324.96" r="3.07"/>
+      <circle cx="16.48" cy="322.08" r="4.03"/>
+      <circle cx="20.48" cy="324.32" r="2.88"/>
+      <rect x="9.6" y="324.32" width="12.8" height="3.52" rx="1.6"/>
+    </g>
+    <text x="28" y="332" fill="#333333">AWS Cloud</text>
+    <rect x="242" y="0" width="372" height="264" rx="6" fill="none" stroke="#9370DB" stroke-dasharray="4,3"/>
+    <rect x="252.4" y="5.2" width="11.2" height="13.6" rx="0.96" fill="#9370DB"/>
+    <line x1="253.74" y1="9.73" x2="262.26" y2="9.73" stroke="white" stroke-width="1" opacity="0.6"/>
+    <line x1="253.74" y1="14.27" x2="262.26" y2="14.27" stroke="white" stroke-width="1" opacity="0.6"/>
+    <circle cx="261.58" cy="7.65" r="0.72" fill="white" opacity="0.85"/>
+    <text x="270" y="20" fill="#333333">External Compute</text>
+    <rect x="242" y="312" width="202" height="156" rx="6" fill="none" stroke="#9370DB" stroke-dasharray="4,3"/>
+    <rect x="252.56" y="320" width="10.88" height="8" fill="#9370DB"/>
+    <ellipse cx="258" cy="320" rx="5.44" ry="2.08" fill="#9370DB"/>
+    <ellipse cx="258" cy="328" rx="5.44" ry="2.08" fill="#9370DB"/>
+    <text x="270" y="332" fill="#333333">Data Storage</text>
+    <rect x="36" y="60" width="130" height="60" rx="6" fill="#ECECFF" stroke="#9370DB"/>
+    <circle cx="101" cy="78" r="7.68" fill="none" stroke="#9370DB" stroke-width="1.2"/>
+    <ellipse cx="101" cy="78" rx="3.23" ry="7.68" fill="none" stroke="#9370DB" stroke-width="1.2"/>
+    <line x1="93.32" y1="78" x2="108.68" y2="78" stroke="#9370DB" stroke-width="1.2"/>
+    <text x="101" y="106" fill="#333333" text-anchor="middle">Web Application</text>
+    <rect x="36" y="372" width="130" height="60" rx="6" fill="#ECECFF" stroke="#9370DB"/>
+    <rect x="92.84" y="384" width="16.32" height="12" fill="#9370DB"/>
+    <ellipse cx="101" cy="384" rx="8.16" ry="3.12" fill="#9370DB"/>
+    <ellipse cx="101" cy="396" rx="8.16" ry="3.12" fill="#9370DB"/>
+    <text x="101" y="418" fill="#333333" text-anchor="middle">S3 Bucket</text>
+    <rect x="36" y="480" width="130" height="60" rx="6" fill="#ECECFF" stroke="#9370DB"/>
+    <circle cx="101" cy="498" r="7.68" fill="none" stroke="#9370DB" stroke-width="1.2"/>
+    <ellipse cx="101" cy="498" rx="3.23" ry="7.68" fill="none" stroke="#9370DB" stroke-width="1.2"/>
+    <line x1="93.32" y1="498" x2="108.68" y2="498" stroke="#9370DB" stroke-width="1.2"/>
+    <text x="101" y="526" fill="#333333" text-anchor="middle">SQS Queue</text>
+    <rect x="278" y="60" width="130" height="60" rx="6" fill="#ECECFF" stroke="#9370DB"/>
+    <rect x="334.6" y="67.8" width="16.8" height="20.4" rx="1.44" fill="#9370DB"/>
+    <line x1="336.62" y1="74.6" x2="349.38" y2="74.6" stroke="white" stroke-width="1" opacity="0.6"/>
+    <line x1="336.62" y1="81.4" x2="349.38" y2="81.4" stroke="white" stroke-width="1" opacity="0.6"/>
+    <circle cx="348.38" cy="71.47" r="1.08" fill="white" opacity="0.85"/>
+    <text x="343" y="106" fill="#333333" text-anchor="middle">Worker Pool (Python)</text>
+    <rect x="448" y="60" width="130" height="60" rx="6" fill="#ECECFF" stroke="#9370DB"/>
+    <rect x="504.6" y="67.8" width="16.8" height="20.4" rx="1.44" fill="#9370DB"/>
+    <line x1="506.62" y1="74.6" x2="519.38" y2="74.6" stroke="white" stroke-width="1" opacity="0.6"/>
+    <line x1="506.62" y1="81.4" x2="519.38" y2="81.4" stroke="white" stroke-width="1" opacity="0.6"/>
+    <circle cx="518.38" cy="71.47" r="1.08" fill="white" opacity="0.85"/>
+    <text x="513" y="106" fill="#333333" text-anchor="middle">AI Model Service (ANN)</text>
+    <rect x="278" y="372" width="130" height="60" rx="6" fill="#ECECFF" stroke="#9370DB"/>
+    <rect x="334.84" y="384" width="16.32" height="12" fill="#9370DB"/>
+    <ellipse cx="343" cy="384" rx="8.16" ry="3.12" fill="#9370DB"/>
+    <ellipse cx="343" cy="396" rx="8.16" ry="3.12" fill="#9370DB"/>
+    <text x="343" y="418" fill="#333333" text-anchor="middle">PostgreSQL</text>
+    <rect x="278" y="168" width="130" height="60" rx="6" fill="#ECECFF" stroke="#9370DB"/>
+    <circle cx="343" cy="186" r="7.68" fill="none" stroke="#9370DB" stroke-width="1.2"/>
+    <ellipse cx="343" cy="186" rx="3.23" ry="7.68" fill="none" stroke="#9370DB" stroke-width="1.2"/>
+    <line x1="335.32" y1="186" x2="350.68" y2="186" stroke="#9370DB" stroke-width="1.2"/>
+    <text x="343" y="214" fill="#333333" text-anchor="middle">WebSocket Notifier</text>
+    <line x1="101" y1="120" x2="101" y2="372" stroke="#333333" marker-end="url(#arch-arrow)"/>
+    <line x1="101" y1="432" x2="101" y2="480" stroke="#333333" marker-end="url(#arch-arrow)"/>
+    <polyline points="166,510 186,510 186,90 278,90" fill="none" stroke="#333333" marker-end="url(#arch-arrow)"/>
+    <polyline points="166,402 186,402 186,90 278,90" fill="none" stroke="#333333" marker-end="url(#arch-arrow)"/>
+    <line x1="408" y1="90" x2="448" y2="90" stroke="#333333" marker-end="url(#arch-arrow)"/>
+    <line x1="448" y1="90" x2="408" y2="90" stroke="#333333" marker-end="url(#arch-arrow)"/>
+    <line x1="343" y1="120" x2="343" y2="372" stroke="#333333" marker-end="url(#arch-arrow)"/>
+    <line x1="278" y1="198" x2="166" y2="90" stroke="#333333" marker-end="url(#arch-arrow)"/>
+  </g>
+</svg>

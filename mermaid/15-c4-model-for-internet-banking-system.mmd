@@ -1,0 +1,17 @@
+C4Container
+    title Internet Banking System - C4 Container Diagram
+    
+    Person(customer, "Personal Banking Customer", "A customer of the bank with personal bank accounts")
+    
+    System_Boundary(bs, "Banking System") {
+        Container(web_app, "Web Application", "Java and Spring MVC", "Delivers the static content and the internet banking single-page application")
+        Container(spa, "Single-Page Application", "JavaScript and Angular", "Provides all of the internet banking functionality to customers via their web browser")
+        Container(api_app, "API Application", "Java and Spring Boot", "Provides internet banking functionality via a JSON/HTTPS API")
+        ContainerDb(database, "Database", "Relational Database Schema", "Stores user registration information, hashed credentials, and access logs")
+    }
+    
+    Rel(customer, web_app, "Uses", "HTTPS")
+    Rel(customer, spa, "Uses", "HTTPS")
+    Rel(web_app, spa, "Delivers", "")
+    Rel(spa, api_app, "Makes API calls to", "JSON/HTTPS")
+    Rel(api_app, database, "Reads from and writes to", "JDBC")

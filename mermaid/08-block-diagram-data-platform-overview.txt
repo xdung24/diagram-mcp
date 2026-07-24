@@ -1,0 +1,10 @@
+Create a block diagram giving a high-level architecture overview of our data platform.
+At the top, add a wide "Dashboard" block spanning the full width of the diagram.
+Below it, group the data sources into one cluster: a cylindrical "Database" block, a hexagonal "API" block, and a parallelogram "Files" block.
+Next to that cluster, group the processing stage into another cluster: a subroutine-shaped "ETL Pipeline" block, a right-pointing arrow block labeled "Transform", a rhombus "ML Model" block, an up/down arrow block labeled "Aggregate", and a double-circle "Cache" block.
+Leave some empty space, then below everything add a stadium-shaped "Visualizations" block spanning two columns, a bidirectional arrow block labeled "Alerts", and a right-pointing arrow block labeled "Export".
+Style the Dashboard block with a blue fill, the data sources cluster with a purple fill, the processing cluster with a green fill, and the output blocks with a pink fill.
+Connect the Dashboard to both clusters below it.
+Connect every data source block to the ETL Pipeline block.
+Connect ETL Pipeline to Transform labeled "Data", then Transform to ML Model labeled "Results".
+Finally, connect ML Model to each of the three output blocks (Visualizations, Alerts, Export).

@@ -1,0 +1,37 @@
+IT Incident Escalation
+
+Background:
+A company's IT helpdesk handles incoming incident tickets. Simple incidents are
+resolved directly, but more serious ones require parallel investigation by two
+specialist teams before a fix can be attempted.
+
+Goal: Please model the following process.
+Use 4 lanes: Reporter, Helpdesk Agent, Network Team, Security Team.
+
+A reporter opens a ticket describing a problem. The helpdesk agent classifies the
+ticket. If it's a simple, known issue, the helpdesk agent resolves it directly and
+closes the ticket.
+
+If the issue is not simple, the helpdesk agent escalates it. At that point, the network
+team and the security team begin investigating in parallel: the network team checks
+for connectivity or infrastructure faults while, at the same time, the security team
+checks for signs of a security incident. Once both investigations are complete, the
+helpdesk agent reviews both findings together.
+
+Based on the combined findings, the helpdesk agent decides whether the incident is a
+routine fix or a critical incident. A routine fix is applied by the helpdesk agent
+directly. A critical incident is handed to the network team to apply an emergency fix.
+Both paths converge back to a single "verify resolution" step performed by the
+helpdesk agent.
+
+If verification shows the fix did not work, the helpdesk agent reopens the
+investigation and sends it back to the network and security teams to try again; this
+can repeat until verification succeeds.
+
+Once verification succeeds, the helpdesk agent notifies the reporter directly that the
+ticket is resolved, bypassing any further contact with the network or security teams
+since their work is already done at that point.
+
+Note as an annotation: assume ticket severity has already been pre-classified by the
+ticketing system before this process starts, so no separate severity-scoring task is
+modeled here.

@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant User
+    participant Browser
+    participant Server
+    participant Stripe
+    
+    User->>Browser: Click checkout
+    Browser->>Server: POST /pay
+    Browser->>Browser: Show loading spinner
+    Server->>Stripe: charge()
+    Stripe-->>Server: Success token
+    Server-->>Browser: Success response
+    Browser->>Browser: Stop loading spinner
+    Browser->>User: Show success screen

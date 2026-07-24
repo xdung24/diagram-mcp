@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_2d785a9f" name="" targetNamespace="http://bpmn-mcp.local/schema/bpmn">
+  <bpmn:process id="Process_e7943b7d" name="Scoring (Bank)" isExecutable="false">
+    <bpmn:startEvent id="StartEvent_5f362793" name="">
+      <bpmn:outgoing>SequenceFlow_434fad41</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="EndEvent_1f561f3e" name="">
+      <bpmn:incoming>SequenceFlow_b05562fa</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="Task_5422db54" name="Send scoring request">
+      <bpmn:incoming>SequenceFlow_434fad41</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_a3fcc922</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_806da944" name="Wait for result">
+      <bpmn:incoming>SequenceFlow_a3fcc922</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_d90bd1dd</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_8d206dbf" name="Display result to clerk">
+      <bpmn:incoming>SequenceFlow_d90bd1dd</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_b05562fa</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="SequenceFlow_434fad41" name="" sourceRef="StartEvent_5f362793" targetRef="Task_5422db54"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_a3fcc922" name="" sourceRef="Task_5422db54" targetRef="Task_806da944"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_d90bd1dd" name="" sourceRef="Task_806da944" targetRef="Task_8d206dbf"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_b05562fa" name="" sourceRef="Task_8d206dbf" targetRef="EndEvent_1f561f3e"></bpmn:sequenceFlow>
+  </bpmn:process>
+  <bpmn:process id="Process_620fbdc7" name="Scoring (Credit Protection Agency)" isExecutable="false">
+    <bpmn:startEvent id="StartEvent_d22176f2" name="Do level 1 scoring">
+      <bpmn:outgoing>SequenceFlow_a598219b</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="EndEvent_c73bbc3d" name="">
+      <bpmn:incoming>SequenceFlow_3a18228e</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_eaaa891d</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="Task_2d901ad2" name="Send result immediately">
+      <bpmn:incoming>SequenceFlow_b30366f2</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_3a18228e</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_69e4327c" name="Send delay notification">
+      <bpmn:incoming>SequenceFlow_d9e84cd7</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_bcde7711</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_231d7b44" name="Do level 2 scoring">
+      <bpmn:incoming>SequenceFlow_bcde7711</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_ce2eba00</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_741ebe1a" name="Send result">
+      <bpmn:incoming>SequenceFlow_ce2eba00</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_eaaa891d</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gateway_df0d0f5c" name="Result determined?" default="SequenceFlow_b30366f2">
+      <bpmn:incoming>SequenceFlow_a598219b</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_b30366f2</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_d9e84cd7</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="SequenceFlow_a598219b" name="" sourceRef="StartEvent_d22176f2" targetRef="Gateway_df0d0f5c"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_b30366f2" name="" sourceRef="Gateway_df0d0f5c" targetRef="Task_2d901ad2"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_d9e84cd7" name="" sourceRef="Gateway_df0d0f5c" targetRef="Task_69e4327c">
+      <bpmn:conditionExpression type="tFormalExpression">no</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_bcde7711" name="" sourceRef="Task_69e4327c" targetRef="Task_231d7b44"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_ce2eba00" name="" sourceRef="Task_231d7b44" targetRef="Task_741ebe1a"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_3a18228e" name="" sourceRef="Task_2d901ad2" targetRef="EndEvent_c73bbc3d"></bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_eaaa891d" name="" sourceRef="Task_741ebe1a" targetRef="EndEvent_c73bbc3d"></bpmn:sequenceFlow>
+  </bpmn:process>
+  <bpmn:collaboration id="Collaboration_c7b3c2a7">
+    <bpmn:participant id="Participant_9d6755df" name="Banking Frontend" processRef=""></bpmn:participant>
+    <bpmn:participant id="Participant_ad9c97a7" name="Scoring (Bank)" processRef="Process_e7943b7d"></bpmn:participant>
+    <bpmn:participant id="Participant_123cb2e1" name="Scoring (Credit Protection Agency)" processRef="Process_620fbdc7"></bpmn:participant>
+    <bpmn:messageFlow id="MessageFlow_d3775aed" name="scoring request" sourceRef="Task_5422db54" targetRef="StartEvent_d22176f2"></bpmn:messageFlow>
+    <bpmn:messageFlow id="MessageFlow_754d34b9" name="result" sourceRef="Task_2d901ad2" targetRef="Task_8d206dbf"></bpmn:messageFlow>
+    <bpmn:messageFlow id="MessageFlow_1bc3420f" name="delay notification" sourceRef="Task_69e4327c" targetRef="Task_8d206dbf"></bpmn:messageFlow>
+    <bpmn:messageFlow id="MessageFlow_92348186" name="result" sourceRef="Task_741ebe1a" targetRef="Task_8d206dbf"></bpmn:messageFlow>
+  </bpmn:collaboration>
+  <bpmndi:BPMNDiagram id="Diagram_c4b1cbc2">
+    <bpmndi:BPMNPlane id="Plane_e027a6b2" bpmnElement="Collaboration_c7b3c2a7">
+      <bpmndi:BPMNShape id="Shape_dc08b8f8" bpmnElement="Participant_9d6755df" isHorizontal="true">
+        <dc:Bounds x="0" y="0" width="892" height="100"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_a32d6c29" bpmnElement="Participant_ad9c97a7" isHorizontal="true">
+        <dc:Bounds x="0" y="140" width="892" height="160"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_6557ef24" bpmnElement="StartEvent_5f362793">
+        <dc:Bounds x="40" y="202" width="36" height="36"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_0917d89a" bpmnElement="Task_5422db54">
+        <dc:Bounds x="156" y="180" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_73c45a6c" bpmnElement="Task_806da944">
+        <dc:Bounds x="336" y="180" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_2910f085" bpmnElement="Task_8d206dbf">
+        <dc:Bounds x="516" y="180" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_17854c1d" bpmnElement="EndEvent_1f561f3e">
+        <dc:Bounds x="696" y="202" width="36" height="36"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_f80da070" bpmnElement="Participant_123cb2e1" isHorizontal="true">
+        <dc:Bounds x="0" y="340" width="892" height="280"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_3efd1705" bpmnElement="StartEvent_d22176f2">
+        <dc:Bounds x="40" y="402" width="36" height="36"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_b6d11039" bpmnElement="Gateway_df0d0f5c">
+        <dc:Bounds x="156" y="395" width="50" height="50"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_24c4194b" bpmnElement="Task_2d901ad2">
+        <dc:Bounds x="286" y="380" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_94fe5424" bpmnElement="Task_69e4327c">
+        <dc:Bounds x="286" y="500" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_80bcdfef" bpmnElement="Task_231d7b44">
+        <dc:Bounds x="466" y="500" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_1913eeca" bpmnElement="Task_741ebe1a">
+        <dc:Bounds x="646" y="500" width="100" height="80"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_b732c42b" bpmnElement="EndEvent_c73bbc3d">
+        <dc:Bounds x="826" y="402" width="36" height="36"></dc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Edge_05eee1a0" bpmnElement="SequenceFlow_434fad41">
+        <di:waypoint x="76" y="220"></di:waypoint>
+        <di:waypoint x="156" y="220"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_1b8e8b76" bpmnElement="SequenceFlow_a3fcc922">
+        <di:waypoint x="256" y="220"></di:waypoint>
+        <di:waypoint x="336" y="220"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_2a8e1987" bpmnElement="SequenceFlow_d90bd1dd">
+        <di:waypoint x="436" y="220"></di:waypoint>
+        <di:waypoint x="516" y="220"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_033f03da" bpmnElement="SequenceFlow_b05562fa">
+        <di:waypoint x="616" y="220"></di:waypoint>
+        <di:waypoint x="696" y="220"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_1adccd83" bpmnElement="SequenceFlow_a598219b">
+        <di:waypoint x="76" y="420"></di:waypoint>
+        <di:waypoint x="156" y="420"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_1449eea6" bpmnElement="SequenceFlow_b30366f2">
+        <di:waypoint x="206" y="420"></di:waypoint>
+        <di:waypoint x="286" y="420"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_4ea851c2" bpmnElement="SequenceFlow_d9e84cd7">
+        <di:waypoint x="181" y="445"></di:waypoint>
+        <di:waypoint x="181" y="540"></di:waypoint>
+        <di:waypoint x="286" y="540"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_a51a9ce1" bpmnElement="SequenceFlow_bcde7711">
+        <di:waypoint x="386" y="540"></di:waypoint>
+        <di:waypoint x="466" y="540"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_43019495" bpmnElement="SequenceFlow_ce2eba00">
+        <di:waypoint x="566" y="540"></di:waypoint>
+        <di:waypoint x="646" y="540"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_d0e04be1" bpmnElement="SequenceFlow_3a18228e">
+        <di:waypoint x="386" y="420"></di:waypoint>
+        <di:waypoint x="826" y="420"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_82761550" bpmnElement="SequenceFlow_eaaa891d">
+        <di:waypoint x="746" y="540"></di:waypoint>
+        <di:waypoint x="786" y="540"></di:waypoint>
+        <di:waypoint x="786" y="420"></di:waypoint>
+        <di:waypoint x="826" y="420"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_ba268f7d" bpmnElement="MessageFlow_d3775aed">
+        <di:waypoint x="206" y="260"></di:waypoint>
+        <di:waypoint x="206" y="331"></di:waypoint>
+        <di:waypoint x="58" y="331"></di:waypoint>
+        <di:waypoint x="58" y="402"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_b5f5b8a6" bpmnElement="MessageFlow_754d34b9">
+        <di:waypoint x="336" y="380"></di:waypoint>
+        <di:waypoint x="336" y="320"></di:waypoint>
+        <di:waypoint x="566" y="320"></di:waypoint>
+        <di:waypoint x="566" y="260"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_eeca4088" bpmnElement="MessageFlow_1bc3420f">
+        <di:waypoint x="336" y="500"></di:waypoint>
+        <di:waypoint x="336" y="380"></di:waypoint>
+        <di:waypoint x="566" y="380"></di:waypoint>
+        <di:waypoint x="566" y="260"></di:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_0e4eb127" bpmnElement="MessageFlow_92348186">
+        <di:waypoint x="696" y="500"></di:waypoint>
+        <di:waypoint x="696" y="380"></di:waypoint>
+        <di:waypoint x="566" y="380"></di:waypoint>
+        <di:waypoint x="566" y="260"></di:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

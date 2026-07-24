@@ -1,0 +1,22 @@
+---
+config:
+    theme: default
+    maxTextSize: 50000
+    maxEdges: 500
+    fontSize: 16
+---
+gantt
+    dateFormat YYYY-MM-DD
+    axisFormat %m-%d
+    excludes weekends
+    section Phase 1: Discovery & Planning
+    Infrastructure Audit :done, audit, 2026-10-01, 4d
+    Risk Assessment :done, risk, 2026-10-01, 2d
+    Migration Strategy Formulation :strategy, after audit risk, 5d
+    section Phase 2: Execution
+    Database Replication Setup :crit, db_setup, after strategy, 8d
+    App Refactoring :crit, app_refactor, after strategy, 14d
+    Data Sync :data_sync, after db_setup, 3d
+    section Phase 3: Go-Live
+    User Acceptance Testing (UAT) :uat, after app_refactor data_sync, 5d
+    Production Cutover :milestone, after uat, 0d

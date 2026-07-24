@@ -1,0 +1,4 @@
+Can you create a venn diagram showing how our Frontend and Backend teams' responsibilities overlap?
+Frontend owns the UI components and client-side state. Backend owns the database and business logic.
+Where they meet, they jointly own the APIs that connect the two.
+Title it 'Team Overlap'.

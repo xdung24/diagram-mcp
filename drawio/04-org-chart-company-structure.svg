@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="390" viewBox="0 0 560 390">
+<defs>
+  <marker id="arrow-classic" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#000"/>
+  </marker>
+  <marker id="arrow-open" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#000" stroke-width="1.5"/>
+  </marker>
+  <marker id="arrow-block" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#000"/>
+  </marker>
+  <marker id="arrow-diamond" viewBox="0 0 14 10" refX="13" refY="5" markerWidth="10" markerHeight="8" orient="auto-start-reverse">
+    <path d="M 0 5 L 7 0 L 14 5 L 7 10 z" fill="#000"/>
+  </marker>
+  <marker id="arrow-diamond-open" viewBox="0 0 14 10" refX="13" refY="5" markerWidth="10" markerHeight="8" orient="auto-start-reverse">
+    <path d="M 0 5 L 7 0 L 14 5 L 7 10 z" fill="#fff" stroke="#000" stroke-width="1"/>
+  </marker>
+  <marker id="arrow-oval" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <circle cx="5" cy="5" r="4" fill="#000"/>
+  </marker>
+  <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+    <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#00000033"/>
+  </filter>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<g transform="translate(-50.0, -40.0)">
+  <path d="M 150.0 100.0 L 330.0 100.0" fill="none" stroke="#000000" stroke-width="1.0" marker-end="url(#arrow-classic)"/>
+  <path d="M 150.0 100.0 L 150.0 180.0 L 330.0 180.0" fill="none" stroke="#000000" stroke-width="1.0" marker-end="url(#arrow-classic)"/>
+  <path d="M 150.0 100.0 L 150.0 260.0 L 330.0 260.0" fill="none" stroke="#000000" stroke-width="1.0" marker-end="url(#arrow-classic)"/>
+  <path d="M 330.0 100.0 L 510.0 100.0" fill="none" stroke="#000000" stroke-width="1.0" marker-end="url(#arrow-classic)"/>
+  <path d="M 330.0 100.0 L 330.0 180.0 L 510.0 180.0" fill="none" stroke="#000000" stroke-width="1.0" marker-end="url(#arrow-classic)"/>
+  <path d="M 330.0 180.0 L 330.0 260.0 L 510.0 260.0" fill="none" stroke="#000000" stroke-width="1.0" marker-end="url(#arrow-classic)"/>
+  <path d="M 330.0 260.0 L 330.0 340.0 L 510.0 340.0" fill="none" stroke="#000000" stroke-width="1.0" marker-end="url(#arrow-classic)"/>
+  <rect x="80.0" y="70.0" width="140.0" height="60.0" rx="0.0" fill="#ffffff" stroke="#000000" stroke-width="1.0"/>
+  <text x="150.0" y="104.2" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="auto" font-weight="normal" font-style="normal">CEO</text>
+  <rect x="260.0" y="70.0" width="140.0" height="60.0" rx="0.0" fill="#ffffff" stroke="#000000" stroke-width="1.0"/>
+  <text x="330.0" y="104.2" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="auto" font-weight="normal" font-style="normal">VP Engineering</text>
+  <rect x="260.0" y="150.0" width="140.0" height="60.0" rx="0.0" fill="#ffffff" stroke="#000000" stroke-width="1.0"/>
+  <text x="330.0" y="184.2" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="auto" font-weight="normal" font-style="normal">VP Sales</text>
+  <rect x="260.0" y="230.0" width="140.0" height="60.0" rx="0.0" fill="#ffffff" stroke="#000000" stroke-width="1.0"/>
+  <text x="330.0" y="264.2" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="auto" font-weight="normal" font-style="normal">VP Marketing</text>
+  <rect x="440.0" y="70.0" width="140.0" height="60.0" rx="0.0" fill="#ffffff" stroke="#000000" stroke-width="1.0"/>
+  <text x="510.0" y="104.2" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="auto" font-weight="normal" font-style="normal">Engineering Manager</text>
+  <rect x="440.0" y="150.0" width="140.0" height="60.0" rx="0.0" fill="#ffffff" stroke="#000000" stroke-width="1.0"/>
+  <text x="510.0" y="184.2" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="auto" font-weight="normal" font-style="normal">QA Manager</text>
+  <rect x="440.0" y="230.0" width="140.0" height="60.0" rx="0.0" fill="#ffffff" stroke="#000000" stroke-width="1.0"/>
+  <text x="510.0" y="264.2" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="auto" font-weight="normal" font-style="normal">Sales Manager</text>
+  <rect x="440.0" y="310.0" width="140.0" height="60.0" rx="0.0" fill="#ffffff" stroke="#000000" stroke-width="1.0"/>
+  <text x="510.0" y="344.2" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="auto" font-weight="normal" font-style="normal">Marketing Manager</text>
+</g>
+</svg>

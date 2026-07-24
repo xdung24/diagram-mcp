@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1070" height="490" viewBox="0 0 1070 490">
+<defs>
+  <marker id="arrow-classic" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#000"/>
+  </marker>
+  <marker id="arrow-open" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#000" stroke-width="1.5"/>
+  </marker>
+  <marker id="arrow-block" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#000"/>
+  </marker>
+  <marker id="arrow-diamond" viewBox="0 0 14 10" refX="13" refY="5" markerWidth="10" markerHeight="8" orient="auto-start-reverse">
+    <path d="M 0 5 L 7 0 L 14 5 L 7 10 z" fill="#000"/>
+  </marker>
+  <marker id="arrow-diamond-open" viewBox="0 0 14 10" refX="13" refY="5" markerWidth="10" markerHeight="8" orient="auto-start-reverse">
+    <path d="M 0 5 L 7 0 L 14 5 L 7 10 z" fill="#fff" stroke="#000" stroke-width="1"/>
+  </marker>
+  <marker id="arrow-oval" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <circle cx="5" cy="5" r="4" fill="#000"/>
+  </marker>
+  <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+    <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#00000033"/>
+  </filter>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<g transform="translate(-10.0, -10.0)">
+  <rect x="40.0" y="40.0" width="1010.0" height="400.0" fill="transparent" stroke="#000000" stroke-width="1.0"/>
+  <rect x="40.0" y="40.0" width="30.0" height="400.0" fill="#ffffff" stroke="#000000" stroke-width="1.0"/>
+  <text x="55.0" y="240.0" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90, 55.0, 240.0)">Acme Corp</text>
+  <rect x="70.0" y="40.0" width="980.0" height="150.0" fill="transparent" stroke="#000000" stroke-width="1.0"/>
+  <rect x="70.0" y="40.0" width="0.0" height="150.0" fill="#e6e6e6" stroke="#000000" stroke-width="1.0"/>
+  <text x="70.0" y="115.0" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90, 70.0, 115.0)">Employee</text>
+  <rect x="70.0" y="230.0" width="980.0" height="210.0" fill="transparent" stroke="#000000" stroke-width="1.0"/>
+  <rect x="70.0" y="230.0" width="0.0" height="210.0" fill="#e6e6e6" stroke="#000000" stroke-width="1.0"/>
+  <text x="70.0" y="335.0" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90, 70.0, 335.0)">Manager</text>
+  <path d="M 170.0 110.0 L 170.0 290.0 L 360.0 290.0" fill="none" stroke="#000000" stroke-width="1.0" marker-end="url(#arrow-classic)"/>
+  <path d="M 360.0 290.0 L 360.0 300.0 L 515.0 300.0" fill="none" stroke="#000000" stroke-width="1.0" marker-end="url(#arrow-classic)"/>
+  <path d="M 515.0 300.0 L 515.0 290.0 L 720.0 290.0" fill="none" stroke="#000000" stroke-width="1.0" marker-end="url(#arrow-classic)"/>
+  <rect x="502.1" y="286.8" width="25.8" height="16.4" fill="white" rx="2"/>
+  <text x="515.0" y="295.0" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="middle">Yes</text>
+  <path d="M 515.0 300.0 L 515.0 370.0 L 720.0 370.0" fill="none" stroke="#000000" stroke-width="1.0" marker-end="url(#arrow-classic)"/>
+  <rect x="505.4" y="326.8" width="19.2" height="16.4" fill="white" rx="2"/>
+  <text x="515.0" y="335.0" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="middle">No</text>
+  <path d="M 720.0 290.0 L 720.0 110.0 L 890.0 110.0" fill="none" stroke="#000000" stroke-width="1.0" marker-end="url(#arrow-classic)"/>
+  <path d="M 720.0 370.0 L 720.0 110.0 L 890.0 110.0" fill="none" stroke="#000000" stroke-width="1.0" marker-end="url(#arrow-classic)"/>
+  <ellipse cx="170.0" cy="110.0" rx="60.0" ry="40.0" fill="#ffffff" stroke="#000000" stroke-width="1.0"/>
+  <text x="170.0" y="106.4" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="auto" font-weight="normal" font-style="normal">Submit Expense</text>
+  <text x="170.0" y="122.0" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="auto" font-weight="normal" font-style="normal">Report</text>
+  <rect x="290.0" y="260.0" width="140.0" height="60.0" rx="0.0" fill="#ffffff" stroke="#000000" stroke-width="1.0"/>
+  <text x="360.0" y="294.2" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="auto" font-weight="normal" font-style="normal">Review Report</text>
+  <polygon points="515.0,260.0 560.0,300.0 515.0,340.0 470.0,300.0" fill="#ffffff" stroke="#000000" stroke-width="1.0"/>
+  <text x="515.0" y="304.2" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="auto" font-weight="normal" font-style="normal">Approved?</text>
+  <rect x="650.0" y="260.0" width="140.0" height="60.0" rx="0.0" fill="#ffffff" stroke="#000000" stroke-width="1.0"/>
+  <text x="720.0" y="294.2" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="auto" font-weight="normal" font-style="normal">Reimburse Employee</text>
+  <rect x="650.0" y="340.0" width="140.0" height="60.0" rx="0.0" fill="#ffffff" stroke="#000000" stroke-width="1.0"/>
+  <text x="720.0" y="374.2" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="auto" font-weight="normal" font-style="normal">Notify Rejection</text>
+  <ellipse cx="890.0" cy="110.0" rx="60.0" ry="40.0" fill="#ffffff" stroke="#000000" stroke-width="1.0"/>
+  <text x="890.0" y="114.2" fill="#000000" font-size="12" font-family="sans-serif" text-anchor="middle" dominant-baseline="auto" font-weight="normal" font-style="normal">Done</text>
+</g>
+</svg>

@@ -1,0 +1,5 @@
+Draw a timeline of web development history.
+In 1989, Tim Berners-Lee invents the World Wide Web.
+In 1995, Netscape releases JavaScript and PHP is created.
+In 2005, AJAX is coined and Git is released by Linus Torvalds.
+In 2013, React is open-sourced by Facebook.

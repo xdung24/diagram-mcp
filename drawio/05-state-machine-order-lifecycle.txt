@@ -1,0 +1,12 @@
+Create a state-machine-style diagram for an online order's lifecycle, using
+plain shapes (no containers).
+
+States (draw each as a rounded rectangle): "Created", "Paid", "Packed",
+"Shipped", "Delivered", "Cancelled", "Refunded".
+
+Transitions: Created -> Paid (label "payment received"), Paid -> Packed,
+Packed -> Shipped, Shipped -> Delivered.
+
+Cancellation paths: Created -> Cancelled (label "customer cancels"), Paid ->
+Cancelled (label "customer cancels"), Cancelled -> Refunded (label "issue
+refund").

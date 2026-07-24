@@ -1,0 +1,12 @@
+Create a requirement diagram for an Autonomous Emergency Braking (AEB) system.
+First, let's establish our core system requirement:
+Name: 'Collision Avoidance'
+ID: 'REQ-001'
+Text: 'The system shall automatically apply brakes to avoid collision with obstacles.'
+Risk: High
+Next, we have two sub-requirements that derive from REQ-001:
+'Obstacle Detection' (ID: 'REQ-001.1', Text: 'The system must detect obstacles within 150 meters using LiDAR and Camera.', Risk: Medium)
+'Braking Force' (ID: 'REQ-001.2', Text: 'The system must apply maximum braking deceleration of 9.8 m/s².', Risk: High)
+Now let's define our physical components and tests:
+We have a functional software element (an interface/block) named 'SensorFusionModule'. This component satisfies 'Obstacle Detection' (REQ-001.1).
+We have a test case named 'ObstacleDetectionTest' (Method: 'Simulation'). This test case verifies 'Obstacle Detection' (REQ-001.1)

@@ -1,0 +1,8 @@
+Create a vertical XY chart mapping our digital product's performance over the first two quarters of the year. 
+The chart title should be 'Q1-Q2 Growth Metrics'.
+Let's set up the axes:
+For the x-axis, the categories are the months: 'Jan', 'Feb', 'Mar', 'Apr', 'May', and 'Jun'.
+For the y-axis, give it the label 'Revenue (in Thousands)' and explicitly bound the numerical grid scale to start at a minimum of 0 and run up to a maximum of 100.
+Now, let's plot the actual data series:
+I want a bar chart showing monthly revenue milestones. The values for each consecutive month are: 45, 52, 68, 61, 75, and 90.
+On top of those bars, overlay a line graph tracing our active customer account growth trajectory. The points for each month should exactly map to: 40, 48, 55, 65, 78, and 85.

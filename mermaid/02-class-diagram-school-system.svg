@@ -1,0 +1,31 @@
+<svg role="img" xmlns="http://www.w3.org/2000/svg" width="337.1" height="364" viewBox="0 0 337.1 364" font-family="sans-serif" font-size="14">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <g transform="translate(16,16)">
+    <path d="M102.34,84 L102.34,174 L62.22,174" fill="none" stroke="#333333"/>
+    <path d="M102.34,84 L96.34,96 L108.34,96 Z" fill="#ffffff" stroke="#333333"/>
+    <path d="M199.65,84 L199.65,174 L239.77,174" fill="none" stroke="#333333"/>
+    <path d="M199.65,84 L193.65,96 L205.65,96 Z" fill="#ffffff" stroke="#333333"/>
+    <path d="M239.77,218 L239.77,308" fill="none" stroke="#333333"/>
+    <path d="M239.77,308 L245.77,296 L233.77,296 Z" fill="#333333"/>
+    <text x="231.77" y="232" fill="#333333" text-anchor="middle">1</text>
+    <text x="247.77" y="294" fill="#333333" text-anchor="middle">*</text>
+    <text x="239.77" y="263" fill="#333333" text-anchor="middle" dy="-2">teaches</text>
+    <rect x="90.34" y="0" width="121.31" height="84" fill="#ECECFF" stroke="#9370DB"/>
+    <text x="151" y="14" fill="#333333" text-anchor="middle" font-weight="bold">User</text>
+    <line x1="90.34" y1="24" x2="211.65" y2="24" stroke="#9370DB"/>
+    <text x="110.34" y="41" fill="#333333">+string name</text>
+    <text x="110.34" y="61" fill="#333333">+string email</text>
+    <line x1="90.34" y1="64" x2="211.65" y2="64" stroke="#9370DB"/>
+    <text x="110.34" y="81" fill="#333333">+login()</text>
+    <rect x="0" y="174" width="124.45" height="44" fill="#ECECFF" stroke="#9370DB"/>
+    <text x="62.22" y="188" fill="#333333" text-anchor="middle" font-weight="bold">Student</text>
+    <line x1="0" y1="198" x2="124.45" y2="198" stroke="#9370DB"/>
+    <text x="20" y="215" fill="#333333">+int studentId</text>
+    <rect x="174.45" y="174" width="130.65" height="44" fill="#ECECFF" stroke="#9370DB"/>
+    <text x="239.77" y="188" fill="#333333" text-anchor="middle" font-weight="bold">Teacher</text>
+    <line x1="174.45" y1="198" x2="305.1" y2="198" stroke="#9370DB"/>
+    <text x="194.45" y="215" fill="#333333">+string subject</text>
+    <rect x="197.21" y="308" width="85.12" height="24" fill="#ECECFF" stroke="#9370DB"/>
+    <text x="239.77" y="322" fill="#333333" text-anchor="middle" font-weight="bold">Course</text>
+  </g>
+</svg>

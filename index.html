@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagram Tests - MCP Servers Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .badge-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        main {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            font-size: 2.5rem;
+        }
+
+        .section-title {
+            flex: 1;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .section-title p {
+            opacity: 0.95;
+            font-size: 0.95rem;
+        }
+
+        .section-count {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .diagram-card {
+            background: white;
+            border: 2px solid #f0f0f0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .diagram-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-color: #667eea;
+        }
+
+        .diagram-preview {
+            height: 200px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .diagram-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .diagram-preview.loading {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .diagram-info {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .diagram-name {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .diagram-type {
+            display: inline-block;
+            background: #e8f4f8;
+            color: #0277bd;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .diagram-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .diagram-links {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .link-btn {
+            flex: 1;
+            padding: 0.6rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .link-btn:hover {
+            background: #764ba2;
+        }
+
+        .link-btn.secondary {
+            background: #f0f0f0;
+            color: #667eea;
+        }
+
+        .link-btn.secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .overview {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .feature-box h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-box p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .feature-box ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .feature-box li {
+            color: #555;
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .feature-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .filter-bar {
+            display: flex;
+            gap: 1rem;
+            padding: 2rem;
+            flex-wrap: wrap;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .filter-btn:hover {
+            border-color: #667eea;
+            color: #667eea;
+        }
+
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .mcp-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .mcp-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 1rem;
+            }
+
+            .badge-group {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .badge {
+                width: 100%;
+            }
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #999;
+        }
+
+        .empty-state-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 10px;
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .modal-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .modal-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .modal-body {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
+            border-radius: 5px;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .modal-btn {
+            padding: 0.8rem 1.5rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .modal-btn:hover {
+            background: #764ba2;
+        }
+
+        .modal-btn.secondary {
+            background: #f0f0f0;
+            color: #667eea;
+        }
+
+        .modal-btn.secondary:hover {
+            background: #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                max-width: 95vw;
+                max-height: 85vh;
+            }
+
+            .modal-header {
+                padding: 1rem;
+            }
+
+            .modal-body {
+                padding: 1.5rem;
+            }
+
+            .modal-image {
+                max-height: 50vh;
+            }
+
+            .modal-actions {
+                gap: 0.5rem;
+            }
+
+            .modal-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📊 Diagram Tests</h1>
+        <p>Interactive Demo of MCP Diagram Servers</p>
+        <div class="badge-group">
+            <div class="badge">🔄 BPMN MCP</div>
+            <div class="badge">📈 Mermaid MCP</div>
+            <div class="badge">🎨 Draw.io MCP</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Overview Section -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">🚀</div>
+                <div class="section-title">
+                    <h2>What is Diagram Tests?</h2>
+                    <p>Showcase of MCP servers for generating professional diagrams from text descriptions</p>
+                </div>
+            </div>
+            <div class="overview">
+                <div class="feature-box">
+                    <h3>🔄 BPMN MCP</h3>
+                    <p>Business Process Model and Notation diagrams</p>
+                    <ul>
+                        <li>Business Process Diagrams</li>
+                        <li>Collaboration Diagrams</li>
+                        <li>Automatic layout</li>
+                        <li>SVG & PNG export</li>
+                    </ul>
+                </div>
+                <div class="feature-box">
+                    <h3>📈 Mermaid MCP</h3>
+                    <p>Comprehensive diagram support for 21+ diagram types</p>
+                    <ul>
+                        <li>Flowcharts & sequences</li>
+                        <li>State diagrams & ER models</li>
+                        <li>Gantt charts & timelines</li>
+                        <li>C4 architecture diagrams</li>
+                    </ul>
+                </div>
+                <div class="feature-box">
+                    <h3>🎨 Draw.io MCP</h3>
+                    <p>Flexible diagram generation and editing</p>
+                    <ul>
+                        <li>Convert BPMN to draw.io</li>
+                        <li>Convert Mermaid to draw.io</li>
+                        <li>Edit existing diagrams</li>
+                        <li>Vector exports</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- BPMN Section -->
+        <section class="section" id="bpmn-section">
+            <div class="section-header">
+                <div class="section-icon">🔄</div>
+                <div class="section-title">
+                    <h2>BPMN Diagrams</h2>
+                    <p>Business Process Model and Notation - Process flows and workflows</p>
+                </div>
+                <div class="section-count">10 diagrams</div>
+            </div>
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="filterDiagrams('bpmn', 'all')">All</button>
+                <button class="filter-btn" onclick="filterDiagrams('bpmn', 'process')">Processes</button>
+                <button class="filter-btn" onclick="filterDiagrams('bpmn', 'collaboration')">Collaboration</button>
+            </div>
+            <div class="gallery" id="bpmn-gallery">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Mermaid Section -->
+        <section class="section" id="mermaid-section">
+            <div class="section-header">
+                <div class="section-icon">📈</div>
+                <div class="section-title">
+                    <h2>Mermaid Diagrams</h2>
+                    <p>21+ diagram types: flowcharts, sequences, ERD, C4, and more</p>
+                </div>
+                <div class="section-count">23+ diagrams</div>
+            </div>
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="filterDiagrams('mermaid', 'all')">All</button>
+                <button class="filter-btn" onclick="filterDiagrams('mermaid', 'flowchart')">Flowchart</button>
+                <button class="filter-btn" onclick="filterDiagrams('mermaid', 'sequence')">Sequence</button>
+                <button class="filter-btn" onclick="filterDiagrams('mermaid', 'architecture')">Architecture</button>
+            </div>
+            <div class="gallery" id="mermaid-gallery">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Draw.io Section -->
+        <section class="section" id="drawio-section">
+            <div class="section-header">
+                <div class="section-icon">🎨</div>
+                <div class="section-title">
+                    <h2>Draw.io Diagrams</h2>
+                    <p>Flexible diagrams converted from BPMN and Mermaid formats</p>
+                </div>
+                <div class="section-count">8 diagrams</div>
+            </div>
+            <div class="gallery" id="drawio-gallery">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Image Preview Modal -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="modalTitle">Preview</div>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" class="modal-image" alt="Diagram preview" />
+                <div class="modal-actions">
+                    <a id="modalSvgBtn" href="#" class="modal-btn" target="_blank">📥 Download SVG</a>
+                    <a id="modalPngBtn" href="#" class="modal-btn" target="_blank">📥 Download PNG</a>
+                    <a id="modalSrcBtn" href="#" class="modal-btn secondary" target="_blank">📄 View Source</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Diagram Tests Repository</strong></p>
+        <p>Testing and validating MCP servers for diagram generation</p>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem;">
+            <a href="https://github.com/dunglex/diagram-tests" class="mcp-link">View on GitHub</a> | 
+            <a href="https://github.com/dunglex/diagram-tests/blob/master/README.md" class="mcp-link">Documentation</a>
+        </p>
+    </footer>
+
+    <script>
+        const diagramData = {
+            bpmn: [
+                { name: '1. Dispatch of Goods', slug: '1-dispatch-of-goods', category: 'process', description: 'Product dispatch and delivery workflow' },
+                { name: '2. Recourse Process', slug: '2-recourse', category: 'process', description: 'Return and recourse handling procedure' },
+                { name: '3. Credit Scoring', slug: '3-credit-scoring', category: 'process', description: 'Credit evaluation and scoring workflow' },
+                { name: '4. Self-Service Restaurant', slug: '4-self-service-restaurant', category: 'collaboration', description: 'Restaurant ordering and service flow' },
+                { name: '5. Loan Application Review', slug: '5-loan-application-review', category: 'process', description: 'Loan application processing workflow' },
+                { name: '6. IT Incident Escalation', slug: '6-it-incident-escalation', category: 'process', description: 'IT support incident handling and escalation' },
+                { name: '7. Expense Reimbursement', slug: '7-expense-reimbursement', category: 'process', description: 'Employee expense reimbursement process' },
+                { name: '8. Online Order Fulfillment', slug: '8-online-order-fulfillment', category: 'process', description: 'E-commerce order processing workflow' },
+                { name: '9. Insurance Claim Handling', slug: '9-insurance-claim-handling', category: 'process', description: 'Insurance claim submission and processing' },
+                { name: '10. Travel Booking Coordination', slug: '10-travel-booking-coordination', category: 'collaboration', description: 'Multi-party travel booking coordination' }
+            ],
+            mermaid: [
+                { name: '01. Flowchart - Morning Routine', slug: '01-flowchart-morning-routine', category: 'flowchart', description: 'Daily morning routine flowchart' },
+                { name: '02. Class Diagram - School System', slug: '02-class-diagram-school-system', category: 'class', description: 'Object-oriented school system design' },
+                { name: '03. Sequence - Online Checkout', slug: '03-sequence-diagram-online-checkout-process', category: 'sequence', description: 'E-commerce checkout interactions' },
+                { name: '04. State Diagram - Smart Light', slug: '04-state-diagram-smart-light-bulb', category: 'state', description: 'Smart light state transitions' },
+                { name: '05. ER Diagram - E-commerce DB', slug: '05-entity-relationship-diagram-e-commerce-database', category: 'erd', description: 'Database schema for e-commerce' },
+                { name: '06. Journey - Flight Booking', slug: '06-journey-diagram-booking-flight', category: 'journey', description: 'User journey for booking flights' },
+                { name: '07. Timeline - Web Development', slug: '07-timeline-diagram-web-development-history', category: 'timeline', description: 'History of web development' },
+                { name: '08. Block - Data Platform', slug: '08-block-diagram-data-platform-overview', category: 'architecture', description: 'Data platform architecture overview' },
+                { name: '09. Gantt - Cloud Migration', slug: '09-gantt-chart-cloud-migration-initiative', category: 'gantt', description: 'Cloud migration project timeline' },
+                { name: '10. Pie Chart - Budget', slug: '10-pie-chart-budget-allocation', category: 'chart', description: 'Budget allocation breakdown' },
+                { name: '11. Quadrant - Feature Prioritization', slug: '11-quadrant-chart-feature-prioritization', category: 'chart', description: 'Feature prioritization matrix' },
+                { name: '12. Requirement - Emergency Braking', slug: '12-requirement-diagram-for-emergency-braking-system', category: 'requirement', description: 'Safety system requirements' },
+                { name: '13. Architecture - AI Image Pipeline', slug: '13-architecture-diagram-ai-powered-image-processing-pipeline', category: 'architecture', description: 'AI-powered image processing' },
+                { name: '14. Mind Map - Software Startup', slug: '14-mind-map-building-software-startup', category: 'mindmap', description: 'Startup building roadmap' },
+                { name: '15. C4 Model - Internet Banking', slug: '15-c4-model-for-internet-banking-system', category: 'architecture', description: 'Internet banking system architecture' },
+                { name: '16. Kanban - Agile Sprint', slug: '16-kanban-board-agile-sprint', category: 'kanban', description: 'Agile sprint task board' },
+                { name: '17. Git Graph - Web Development', slug: '17-git-graph-web-development', category: 'git', description: 'Git branching strategy' },
+                { name: '18. Package - IoT Sync Protocol', slug: '18-package-diagram-for-iot-sync-protocol', category: 'package', description: 'IoT package structure' },
+                { name: '19. Treemap - Budget Allocation', slug: '19-tree-map-cooperate-budget-allocation', category: 'chart', description: 'Corporate budget visualization' },
+                { name: '20. XY Chart - Sales Performance', slug: '20-xy-chart-sale-performance-vs-active-user', category: 'chart', description: 'Sales vs active users analysis' },
+                { name: '21. Sankey - Revenue Flow', slug: '21-sankey-diagram-annual-revenue-flow', category: 'chart', description: 'Annual revenue flow visualization' },
+                { name: '22. Venn Diagram - Team Overlap', slug: '22-venn-diagram-team-overlap', category: 'chart', description: 'Team skills overlap analysis' },
+                { name: '23. Cynefin - Incident Response', slug: '23-cynefin-diagram-incident-response', category: 'chart', description: 'Incident response decision framework' }
+            ],
+            drawio: [
+                { name: '01. Flowchart - Morning Routine', slug: '01-flowchart-morning-routine', category: 'flowchart', description: 'Daily morning routine flowchart' },
+                { name: '02. Swimlane - Expense Approval', slug: '02-swimlane-expense-approval', category: 'swimlane', description: 'Expense approval workflow' },
+                { name: '03. Network - Web Architecture', slug: '03-network-diagram-web-architecture', category: 'network', description: 'Web infrastructure diagram' },
+                { name: '04. Org Chart - Company Structure', slug: '04-org-chart-company-structure', category: 'org', description: 'Organizational structure' },
+                { name: '05. State Machine - Order Lifecycle', slug: '05-state-machine-order-lifecycle', category: 'state', description: 'Order processing states' },
+                { name: '06. ER Diagram - E-commerce DB', slug: '06-er-diagram-ecommerce-database', category: 'erd', description: 'E-commerce database schema' },
+                { name: '07. Swimlane - IT Incident', slug: '07-swimlane-it-incident-escalation', category: 'swimlane', description: 'IT incident workflow' },
+                { name: '08. Cloud Architecture', slug: '08-cloud-architecture-with-groups', category: 'architecture', description: 'Cloud infrastructure design' }
+            ]
+        };
+
+        function createDiagramCard(diagram, type) {
+            const basePath = type === 'bpmn' ? '/bpmn/' : type === 'mermaid' ? '/mermaid/' : '/drawio/';
+            const svgPath = basePath + diagram.slug + '.svg';
+            const pngPath = basePath + diagram.slug + '.png';
+            const txtPath = basePath + diagram.slug + '.txt';
+            const mmdPath = basePath + diagram.slug + '.mmd';
+
+            return `
+                <div class="diagram-card" data-category="${diagram.category}" onclick="openModal(event, '${diagram.name}', '${svgPath}', '${pngPath}', '${txtPath}')">
+                    <div class="diagram-preview loading">
+                        <img src="${svgPath}" alt="${diagram.name}" onerror="this.parentElement.textContent='Preview unavailable'">
+                    </div>
+                    <div class="diagram-info">
+                        <div class="diagram-name">${diagram.name}</div>
+                        <span class="diagram-type">${diagram.category.toUpperCase()}</span>
+                        <div class="diagram-description">${diagram.description}</div>
+                        <div class="diagram-links">
+                            <a href="${svgPath}" class="link-btn" target="_blank" onclick="event.stopPropagation()">SVG</a>
+                            <a href="${pngPath}" class="link-btn" target="_blank" onclick="event.stopPropagation()">PNG</a>
+                            <a href="${txtPath}" class="link-btn secondary" target="_blank" onclick="event.stopPropagation()">Source</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderDiagrams(type) {
+            const galleryId = type + '-gallery';
+            const gallery = document.getElementById(galleryId);
+            const data = diagramData[type];
+
+            if (!data || data.length === 0) {
+                gallery.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📭</div><p>No diagrams found</p></div>';
+                return;
+            }
+
+            gallery.innerHTML = data.map(diagram => createDiagramCard(diagram, type)).join('');
+        }
+
+        function filterDiagrams(type, category) {
+            const galleryId = type + '-gallery';
+            const gallery = document.getElementById(galleryId);
+            const cards = gallery.querySelectorAll('.diagram-card');
+
+            // Update button states
+            const section = document.getElementById(type + '-section');
+            const buttons = section.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter cards
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function openModal(event, title, svgPath, pngPath, txtPath) {
+            event.preventDefault();
+            const modal = document.getElementById('previewModal');
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalImage').src = svgPath;
+            document.getElementById('modalSvgBtn').href = svgPath;
+            document.getElementById('modalPngBtn').href = pngPath;
+            document.getElementById('modalSrcBtn').href = txtPath;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('previewModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderDiagrams('bpmn');
+            renderDiagrams('mermaid');
+            renderDiagrams('drawio');
+
+            // Setup modal event listeners
+            const modal = document.getElementById('previewModal');
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Close modal on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

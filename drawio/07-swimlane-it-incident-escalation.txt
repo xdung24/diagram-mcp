@@ -1,0 +1,17 @@
+Create a swimlane process diagram for IT incident escalation, with three
+lanes to exercise a bigger pool.
+
+Pool: "Support Center". Lanes: "Helpdesk", "L2 Support", "Engineering".
+
+Helpdesk lane: start event "Incident Reported", task "Log Ticket".
+L2 Support lane: task "Investigate", decision "Resolved?".
+Engineering lane: task "Root Cause Fix".
+Helpdesk lane (again): end event "Ticket Closed".
+
+Flow: Incident Reported -> Log Ticket -> Investigate -> Resolved?. If yes,
+go straight to Ticket Closed. If no, go to Root Cause Fix, then back to
+Investigate (a retry loop), and also allow Root Cause Fix -> Ticket Closed
+once fixed.
+
+Add a text annotation "SLA: 4 hours for P1 incidents" attached to the
+Investigate task.

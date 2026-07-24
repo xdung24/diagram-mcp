@@ -1,0 +1,6 @@
+Create a architecture diagram for the AI powered system that utilizes an asynchronous pipeline for image classification. 
+Users upload raw images via the Web Application, which uploads the files directly to an AWS S3 Bucket for storage.
+Upon a successful upload, S3 triggers an event notification that pushes a message into an Amazon SQS Queue.
+An external Worker Pool, built with Python, constantly polls this SQS queue.
+When a worker grabs a message, it downloads the corresponding image from S3 and passes it into our core Core AI Model Service (running an ANN model) for processing.
+The model output—consisting of classification tags and confidence scores—is then written to a PostgreSQL database, while a real-time notification is pushed back to the frontend via WebSockets.

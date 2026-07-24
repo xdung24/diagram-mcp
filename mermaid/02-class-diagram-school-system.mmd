@@ -1,0 +1,20 @@
+classDiagram
+    class User {
+        +string name
+        +string email
+        +login()
+    }
+    
+    class Student {
+        +int studentId
+    }
+    
+    class Teacher {
+        +string subject
+    }
+    
+    class Course
+    
+    User <|-- Student
+    User <|-- Teacher
+    Teacher "1" --> "*" Course : teaches
