@@ -42,6 +42,8 @@ type Result struct {
 
 const binBaseName = "diagram-mcp"
 
+var servers = []string{"bpmn", "mermaid", "drawio"}
+
 // RunInstall implements `diagram-mcp install`: it copies this binary to a
 // user-writable location on (or added to) PATH, and registers it as a
 // stdio MCP server with VS Code and Claude Desktop.
@@ -54,7 +56,6 @@ func RunInstall(args []string) {
 	if err := fs.Parse(args); err != nil {
 		log.Fatalf("diagram-mcp install: %v", err)
 	}
-
 	res, err := Run(Options{
 		Dir:        *dir,
 		SkipPath:   *noPath,
@@ -131,19 +132,23 @@ func RunUninstall(args []string) {
 
 	// Unregister from VS Code
 	if !*noVSCode {
-		if err := unregisterVSCode(); err != nil {
-			log.Printf("warning: could not unregister from VS Code: %v", err)
-		} else {
-			fmt.Println("Unregistered diagram-mcp from VS Code")
+		for _, serverName := range servers {
+			if err := unregisterVSCode(serverName); err != nil {
+				log.Printf("warning: could not unregister from VS Code: %v", err)
+			} else {
+				fmt.Println("Unregistered diagram-mcp from VS Code")
+			}
 		}
 	}
 
 	// Unregister from Claude Desktop
 	if !*noClaude {
-		if err := unregisterClaude(); err != nil {
-			log.Printf("warning: could not unregister from Claude Desktop: %v", err)
-		} else {
-			fmt.Println("Unregistered diagram-mcp from Claude Desktop")
+		for _, serverName := range servers {
+			if err := unregisterClaude(serverName); err != nil {
+				log.Printf("warning: could not unregister from Claude Desktop: %v", err)
+			} else {
+				fmt.Println("Unregistered diagram-mcp from Claude Desktop")
+			}
 		}
 	}
 
@@ -190,11 +195,6 @@ func Run(opts Options) (*Result, error) {
 		res.Copied = true
 	}
 
-	applyInstallActions(res, opts, dir, destPath)
-	return res, nil
-}
-
-func applyInstallActions(res *Result, opts Options, dir, destPath string) {
 	if !opts.SkipPath {
 		if isDirInPath(dir) {
 			res.AddedToPath = false
@@ -206,19 +206,24 @@ func applyInstallActions(res *Result, opts Options, dir, destPath string) {
 	}
 
 	if !opts.SkipVSCode {
-		if path, err := registerVSCode(destPath); err != nil {
-			res.Warnings = append(res.Warnings, fmt.Sprintf("could not register with VS Code: %v", err))
-		} else {
-			res.VSCodeConfigPath = path
+		for _, serverName := range servers {
+			if path, err := registerVSCode(serverName, destPath); err != nil {
+				res.Warnings = append(res.Warnings, fmt.Sprintf("could not register with VS Code: %v", err))
+			} else {
+				res.VSCodeConfigPath = path
+			}
 		}
 	}
 	if !opts.SkipClaude {
-		if path, err := registerClaude(destPath); err != nil {
-			res.Warnings = append(res.Warnings, fmt.Sprintf("could not register with Claude Desktop: %v", err))
-		} else {
-			res.ClaudeConfigPath = path
+		for _, serverName := range servers {
+			if path, err := registerClaude(serverName, destPath); err != nil {
+				res.Warnings = append(res.Warnings, fmt.Sprintf("could not register with Claude Desktop: %v", err))
+			} else {
+				res.ClaudeConfigPath = path
+			}
 		}
 	}
+	return res, nil
 }
 
 // defaultInstallDir returns a per-user, no-admin-required install directory

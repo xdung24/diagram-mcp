@@ -8,8 +8,6 @@ import (
 	"runtime"
 )
 
-const serverName = "diagram-mcp"
-
 // vsCodeConfigPath returns the path to VS Code's global (user) MCP server
 // config file, which lists servers under a "servers" key.
 func vsCodeConfigPath() (string, error) {
@@ -52,7 +50,7 @@ func claudeConfigPath() (string, error) {
 	}
 }
 
-func registerVSCode(binPath string) (string, error) {
+func registerVSCode(serverName, binPath string) (string, error) {
 	path, err := vsCodeConfigPath()
 	if err != nil {
 		return "", err
@@ -60,12 +58,12 @@ func registerVSCode(binPath string) (string, error) {
 	entry := map[string]any{
 		"type":    "stdio",
 		"command": binPath,
-		"args":    []string{},
+		"args":    []string{serverName},
 	}
-	return path, mergeJSONServerEntry(path, "servers", entry)
+	return path, mergeJSONServerEntry(serverName, path, "servers", entry)
 }
 
-func registerClaude(binPath string) (string, error) {
+func registerClaude(serverName, binPath string) (string, error) {
 	path, err := claudeConfigPath()
 	if err != nil {
 		return "", err
@@ -74,13 +72,13 @@ func registerClaude(binPath string) (string, error) {
 		"command": binPath,
 		"args":    []string{},
 	}
-	return path, mergeJSONServerEntry(path, "mcpServers", entry)
+	return path, mergeJSONServerEntry(serverName, path, "mcpServers", entry)
 }
 
 // mergeJSONServerEntry reads the JSON document at path (if any), sets
 // doc[topKey][serverName] = entry, and writes it back, preserving any other
 // keys/servers already present.
-func mergeJSONServerEntry(path, topKey string, entry map[string]any) error {
+func mergeJSONServerEntry(serverName, path, topKey string, entry map[string]any) error {
 	doc := map[string]any{}
 	if data, err := os.ReadFile(path); err == nil {
 		if len(data) > 0 {
@@ -110,26 +108,26 @@ func mergeJSONServerEntry(path, topKey string, entry map[string]any) error {
 }
 
 // unregisterVSCode removes the diagram-mcp entry from VS Code's MCP config.
-func unregisterVSCode() error {
+func unregisterVSCode(serverName string) error {
 	path, err := vsCodeConfigPath()
 	if err != nil {
 		return err
 	}
-	return removeJSONServerEntry(path, "servers")
+	return removeJSONServerEntry(serverName, path, "servers")
 }
 
 // unregisterClaude removes the diagram-mcp entry from Claude Desktop's config.
-func unregisterClaude() error {
+func unregisterClaude(serverName string) error {
 	path, err := claudeConfigPath()
 	if err != nil {
 		return err
 	}
-	return removeJSONServerEntry(path, "mcpServers")
+	return removeJSONServerEntry(serverName, path, "mcpServers")
 }
 
 // removeJSONServerEntry reads the JSON document at path, removes
 // doc[topKey][serverName], and writes it back.
-func removeJSONServerEntry(path, topKey string) error {
+func removeJSONServerEntry(serverName, path, topKey string) error {
 	data, err := os.ReadFile(path)
 	if err != nil {
 		if os.IsNotExist(err) {
