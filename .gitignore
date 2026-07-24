@@ -1,0 +1,5 @@
+/diagram-mcp
+*.exe
+*.test
+*.out
+*.tmp
