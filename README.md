@@ -5,7 +5,7 @@ diagram servers end-to-end from plain-text/Markdown process descriptions.
 
 ## Online demo
 
-You can view online demo [Here](https://diagram-mcp-demo.netlify.app/) 
+You can view online demo [Here](https://diagram-mcp.netlify.app/) 
 
 ## Purpose
 
