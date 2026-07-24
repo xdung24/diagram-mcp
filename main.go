@@ -58,11 +58,11 @@ func main() {
 	mcpType := flag.Arg(0)
 	var server *mcp.Server
 	switch mcpType {
-	case "bpmn":
+	case "bpmn-mcp":
 		server = bpmnmcp.NewServer(version)
-	case "mermaid":
+	case "mermaid-mcp":
 		server = mermaidmcp.NewServer(version)
-	case "drawio":
+	case "drawio-mcp":
 		server = drawiomcp.NewServer(version)
 	default:
 		server = mermaidmcp.NewServer(version)

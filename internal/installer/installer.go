@@ -42,7 +42,7 @@ type Result struct {
 
 const binBaseName = "diagram-mcp"
 
-var servers = []string{"bpmn", "mermaid", "drawio"}
+var servers = []string{"bpmn-mcp", "mermaid-mcp", "drawio-mcp"}
 
 // RunInstall implements `diagram-mcp install`: it copies this binary to a
 // user-writable location on (or added to) PATH, and registers it as a
