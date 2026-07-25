@@ -709,10 +709,10 @@
 
         function createDiagramCard(diagram, type) {
             const basePath = type === 'bpmn' ? '/bpmn/' : type === 'mermaid' ? '/mermaid/' : '/drawio/';
-            const svgPath = basePath + diagram.slug + '.svg';
-            const pngPath = basePath + diagram.slug + '.png';
-            const txtPath = basePath + diagram.slug + '.txt';
-            const mmdPath = basePath + diagram.slug + '.mmd';
+            const svgPath = 'sample/' +  basePath + diagram.slug + '.svg';
+            const pngPath = 'sample/' + basePath + diagram.slug + '.png';
+            const txtPath = 'sample/' + basePath + diagram.slug + '.txt';
+            const mmdPath = 'sample/' + basePath + diagram.slug + '.mmd';
 
             return `
                 <div class="diagram-card" data-category="${diagram.category}" onclick="openModal(event, '${diagram.name}', '${svgPath}', '${pngPath}', '${txtPath}')">
