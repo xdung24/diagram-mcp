@@ -99,7 +99,7 @@ jobs:
           if [ "${GITHUB_REF_TYPE}" != "tag" ]; then
             VERSION="dev"
           fi
-          go build -trimpath -ldflags "-s -w -X main.version=${VERSION}" -o "dist/${BINARY}" cmd/diagram-mcp/main.go
+          go build -trimpath -ldflags "-s -w -X main.version=${VERSION}" -o "dist/${BINARY}" .
           ls -la dist/
 
       - name: Upload artifact
