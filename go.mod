@@ -11,9 +11,9 @@ replace github.com/xdung24/drawio-mcp => ../drawio-mcp
 require (
 	github.com/modelcontextprotocol/go-sdk v1.6.1
 	github.com/shirou/gopsutil/v4 v4.26.6
-	github.com/xdung24/bpmn-mcp v0.2.16
-	github.com/xdung24/drawio-mcp v0.2.6
-	github.com/xdung24/mermaid-mcp v0.4.9
+	github.com/xdung24/bpmn-mcp v0.2.19
+	github.com/xdung24/drawio-mcp v0.2.7
+	github.com/xdung24/mermaid-mcp v0.4.10
 	golang.org/x/sys v0.47.0
 )
 
