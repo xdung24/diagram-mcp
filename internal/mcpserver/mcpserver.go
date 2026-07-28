@@ -15,11 +15,11 @@ import (
 func StartMCPServer(mcpType string, httpAddr string, version string) {
 	var server *mcp.Server
 	switch mcpType {
-	case "bpmn-mcp":
+	case "bpmn", "bpmn-mcp":
 		server = bpmn.NewServer(version)
-	case "mermaid-mcp":
+	case "mermaid", "mermaid-mcp":
 		server = mermaid.NewServer(version)
-	case "drawio-mcp":
+	case "drawio", "drawio-mcp":
 		server = drawio.NewServer(version)
 	default:
 		server = mermaid.NewServer(version)
