@@ -13,7 +13,7 @@ require (
 	github.com/shirou/gopsutil/v4 v4.26.6
 	github.com/xdung24/bpmn-mcp v0.2.20
 	github.com/xdung24/drawio-mcp v0.2.8
-	github.com/xdung24/mermaid-mcp v0.4.12
+	github.com/xdung24/mermaid-mcp v0.4.13
 	golang.org/x/sys v0.47.0
 )
 
