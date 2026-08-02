@@ -26,8 +26,8 @@ func RenderDiagram(args []string) {
 		log.Fatal("imagerender: -i is required")
 	}
 	selectedFormat := strings.ToLower(strings.TrimSpace(*format))
-	if selectedFormat != "svg" && selectedFormat != "png" && selectedFormat != "jpg" {
-		log.Fatalf("imagerender: invalid -f value %q (allowed: svg|png|jpg)", *format)
+	if selectedFormat != "svg" && selectedFormat != "png" && selectedFormat != "jpg" && selectedFormat != "json" {
+		log.Fatalf("imagerender: invalid -f value %q (allowed: svg|png|jpg|json)", *format)
 	}
 	baseName := strings.TrimSuffix(inputPath, filepath.Ext(inputPath))
 	targetPath := baseName + "." + selectedFormat
@@ -98,19 +98,30 @@ func RenderDiagram(args []string) {
 		if err != nil {
 			log.Fatalf("mermaid-to-image render: failed to read input file: %v", err)
 		}
-		svg, png, err := mermaid.RenderImages(string(fileContent))
-		if err != nil {
-			log.Fatalf("mermaid-to-image render: failed to render images: %v", err)
-		}
 
-		switch selectedFormat {
-		case "svg":
-			if err := os.WriteFile(targetPath, svg, 0644); err != nil {
-				log.Fatalf("mermaid-to-image render: failed to write svg file: %v", err)
+		if selectedFormat == "json" {
+			jsonData, err := mermaid.RenderDataJSON(string(fileContent))
+			if err != nil {
+				log.Fatalf("mermaid-to-image render: failed to render JSON: %v", err)
 			}
-		case "png":
-			if err := os.WriteFile(targetPath, png, 0644); err != nil {
-				log.Fatalf("mermaid-to-image render: failed to write png file: %v", err)
+			if err := os.WriteFile(targetPath, jsonData, 0644); err != nil {
+				log.Fatalf("mermaid-to-image render: failed to write json file: %v", err)
+			}
+		} else {
+			svg, png, err := mermaid.RenderImages(string(fileContent))
+			if err != nil {
+				log.Fatalf("mermaid-to-image render: failed to render images: %v", err)
+			}
+
+			switch selectedFormat {
+			case "svg":
+				if err := os.WriteFile(targetPath, svg, 0644); err != nil {
+					log.Fatalf("mermaid-to-image render: failed to write svg file: %v", err)
+				}
+			case "png":
+				if err := os.WriteFile(targetPath, png, 0644); err != nil {
+					log.Fatalf("mermaid-to-image render: failed to write png file: %v", err)
+				}
 			}
 		}
 	case ".drawio":
