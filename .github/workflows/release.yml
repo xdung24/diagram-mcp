@@ -28,10 +28,10 @@ jobs:
           #   goarch: arm64
           #   ext: .exe
 
-          # # Linux builds
-          # - goos: linux
-          #   goarch: amd64
-          #   ext: ""
+          # Linux builds
+          - goos: linux
+            goarch: amd64
+            ext: ""
           # - goos: linux
           #   goarch: arm64
           #   ext: ""
